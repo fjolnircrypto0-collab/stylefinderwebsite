@@ -97,15 +97,15 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-4">
             {[
-              { handle: '@stylebyerika', quote: 'I found the exact jacket from that TikTok in 30 seconds. StyleFinder is insane.' },
-              { handle: '@thriftwithme', quote: 'Found a $12 dupe on Depop for a $300 coat. This app pays for itself.' },
-              { handle: '@ootdarchive', quote: 'The only app that actually understands what I\'m looking for visually.' },
-              { handle: '@minimalfit', quote: 'I circled something on a runway photo and it found me three alternatives. Mind blown.' },
-              { handle: '@resalequeen', quote: 'StyleFinder searches new AND secondhand at the same time. Nothing else does that.' },
-              { handle: '@wardrobefiles', quote: 'It\'s like Google Lens but actually built for fashion people.' },
+              { handle: 'Erika M.', img: 'https://i.pravatar.cc/96?img=1', quote: 'okay so I screenshotted a jacket from a tiktok and this app found it in like 30 seconds?? I\'m actually shook' },
+              { handle: 'James T.', img: 'https://i.pravatar.cc/96?img=12', quote: 'my girlfriend showed me a coat she wanted for $300. I found basically the same one on Depop for $40 through this app lol' },
+              { handle: 'Priya S.', img: 'https://i.pravatar.cc/96?img=5', quote: 'finally something that gets what I mean when I say "that kind of top." Google lens never understood me like this' },
+              { handle: 'Marcus L.', img: 'https://i.pravatar.cc/96?img=8', quote: 'saw a fit on instagram, circled the hoodie, and it pulled up three similar ones under $50. this is dangerous for my wallet' },
+              { handle: 'Sofia R.', img: 'https://i.pravatar.cc/96?img=9', quote: 'the fact that it searches Depop AND regular stores at the same time is crazy. no other app does that' },
+              { handle: 'Alex K.', img: 'https://i.pravatar.cc/96?img=11', quote: 'used Google Lens for fashion for years and it was always trash. this actually works. like, properly works.' },
             ].map((t) => (
               <div key={t.handle} className="bg-white rounded-[14px] p-5 border-l-[3px] border-[#C8DEFF] flex gap-4 items-start">
-                <div className="w-11 h-11 rounded-full bg-[#C8DEFF] shrink-0" />
+                <img src={t.img} alt={t.handle} className="w-11 h-11 rounded-full object-cover shrink-0" />
                 <div>
                   <p className="font-bold text-sm mb-1">{t.handle}</p>
                   <p className="text-[#1C1C1E]/45 text-sm leading-relaxed">&quot;{t.quote}&quot;</p>
@@ -200,16 +200,17 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-4">
             {[
-              { handle: '@nordicminimalist', quote: 'Found my dream coat on Depop for a fraction of the price. Unreal.' },
-              { handle: '@fashionfinds', quote: 'I use this every day. It\'s the only app I actually need for shopping.' },
-              { handle: '@thriftqueen', quote: 'Scanned a photo from a magazine and found 6 dupes. Love this app 💓' },
-              { handle: '@ootddaily', quote: 'Downloaded yesterday, already giving it 5 stars ⭐️' },
-              { handle: '@styleinspo', quote: 'For anyone who shops by feel — this is the app you\'ve been waiting for 🙌' },
+              { name: 'Emma W.', img: 'https://i.pravatar.cc/96?img=16', quote: 'I\'ve been looking for this specific coat for months. Found it on Depop in literally 10 seconds. I almost cried lol' },
+              { name: 'Daniel H.', img: 'https://i.pravatar.cc/96?img=14', quote: 'honestly use this more than any other shopping app. it just gets what I want without me having to type anything' },
+              { name: 'Mia C.', img: 'https://i.pravatar.cc/96?img=20', quote: 'took a photo of my friend\'s sweater at dinner and found 4 similar ones before dessert came 😭💓' },
+              { name: 'Ryan P.', img: 'https://i.pravatar.cc/96?img=53', quote: 'downloaded it yesterday just to try and I\'ve already found two things I bought. 5 stars easy' },
+              { name: 'Jasmine L.', img: 'https://i.pravatar.cc/96?img=23', quote: 'if you shop based on vibes and aesthetics rather than brands, this is literally made for you' },
+              { name: 'Noah B.', img: 'https://i.pravatar.cc/96?img=52', quote: 'scanned a streetwear pic from pinterest and it found the exact pants AND cheaper alternatives. wild.' },
             ].map((r) => (
-              <div key={r.handle} className="bg-[#F7F7F2] rounded-[14px] p-5">
+              <div key={r.name} className="bg-[#F7F7F2] rounded-[14px] p-5">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-9 h-9 rounded-full bg-[#C8DEFF]" />
-                  <p className="text-sm font-bold">{r.handle}</p>
+                  <img src={r.img} alt={r.name} className="w-9 h-9 rounded-full object-cover" />
+                  <p className="text-sm font-bold">{r.name}</p>
                 </div>
                 <p className="text-[#1C1C1E]/50 text-sm leading-relaxed">&quot;{r.quote}&quot;</p>
               </div>

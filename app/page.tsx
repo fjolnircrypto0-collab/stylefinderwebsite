@@ -1,4 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 export default function Home() {
+  const Logo = ({ size = 20 }: { size?: number }) => (
+    <img src="/logo-icon.png" alt="" width={size} height={size} className="inline-block" style={{ filter: 'brightness(0)' }} />
+  );
+
   return (
     <div className="bg-[#F7F7F2] text-[#1C1C1E] min-h-screen" style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif' }}>
 
@@ -6,10 +11,13 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[#F7F7F2]/80 border-b border-black/5">
         <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
           <div className="flex items-center gap-6">
-            <div className="flex items-baseline">
-              <span className="text-xl font-black tracking-tight">Style</span>
-              <span className="text-xl font-light tracking-tight">Finder</span>
-              <span className="text-xl font-black">.</span>
+            <div className="flex items-center gap-2">
+              <Logo size={22} />
+              <div className="flex items-baseline">
+                <span className="text-xl font-black tracking-tight">Style</span>
+                <span className="text-xl font-light tracking-tight">Finder</span>
+                <span className="text-xl font-black">.</span>
+              </div>
             </div>
             <div className="hidden md:flex items-center gap-6 text-sm text-[#1C1C1E]/40 font-medium">
               <a href="#" className="hover:text-[#1C1C1E] transition">Home</a>
@@ -116,10 +124,13 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="bg-[#EFEFEA] rounded-[24px] aspect-[9/16] flex items-center justify-center">
               <div className="text-center">
-                <div className="flex items-baseline justify-center mb-2">
-                  <span className="text-3xl font-black">Style</span>
-                  <span className="text-3xl font-light">Finder</span>
-                  <span className="text-3xl font-black">.</span>
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <Logo size={28} />
+                  <div className="flex items-baseline">
+                    <span className="text-3xl font-black">Style</span>
+                    <span className="text-3xl font-light">Finder</span>
+                    <span className="text-3xl font-black">.</span>
+                  </div>
                 </div>
                 <p className="text-[#1C1C1E]/25 text-sm">App Screenshot</p>
               </div>
@@ -231,10 +242,13 @@ export default function Home() {
       {/* Free Trial CTA */}
       <section id="download" className="px-6 py-24 bg-white">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="flex items-baseline justify-center mb-6">
-            <span className="text-2xl font-black">Style</span>
-            <span className="text-2xl font-light">Finder</span>
-            <span className="text-2xl font-black">.</span>
+          <div className="flex items-center justify-center gap-2 mb-6">
+            <Logo size={24} />
+            <div className="flex items-baseline">
+              <span className="text-2xl font-black">Style</span>
+              <span className="text-2xl font-light">Finder</span>
+              <span className="text-2xl font-black">.</span>
+            </div>
           </div>
 
           <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#1C1C1E]/25 mb-5">Claim your 3-day free trial</p>
@@ -264,10 +278,13 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col md:flex-row items-start justify-between gap-10 mb-10">
             <div>
-              <div className="flex items-baseline mb-1">
-                <span className="text-lg font-black">Style</span>
-                <span className="text-lg font-light">Finder</span>
-                <span className="text-lg font-black">.</span>
+              <div className="flex items-center gap-1.5 mb-1">
+                <Logo size={18} />
+                <div className="flex items-baseline">
+                  <span className="text-lg font-black">Style</span>
+                  <span className="text-lg font-light">Finder</span>
+                  <span className="text-lg font-black">.</span>
+                </div>
               </div>
               <p className="text-[#1C1C1E]/25 text-xs">Same style, different price.</p>
             </div>

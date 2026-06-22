@@ -188,9 +188,6 @@ export default function Home() {
             <span className="text-2xl font-black">.</span>
           </div>
 
-          <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#1C1C1E]/25 mb-5">Claim your 3-day free trial</p>
-          <p className="text-[#1C1C1E]/35 text-xs mb-8 max-w-sm mx-auto">No commitment. Cancel anytime.</p>
-
           <a href="#" className="inline-block bg-[#1C1C1E] text-white font-bold px-10 py-4 rounded-[14px] text-base hover:bg-[#1C1C1E]/90 transition" style={{ boxShadow: '0 0 24px rgba(200,222,255,0.5)' }}>
             Download StyleFinder
           </a>
@@ -209,20 +206,20 @@ export default function Home() {
                 <span className="text-lg font-light">Finder</span>
                 <span className="text-lg font-black">.</span>
               </div>
-              <p className="text-[#1C1C1E]/25 text-xs">Same style, different price.</p>
+              <p className="text-[#1C1C1E]/50 text-xs">Same style, different price.</p>
             </div>
 
             <div className="flex gap-14">
               <div>
-                <p className="font-bold text-[10px] uppercase tracking-widest text-[#1C1C1E]/25 mb-3">Legal</p>
-                <div className="flex flex-col gap-2.5 text-sm text-[#1C1C1E]/45">
+                <p className="font-bold text-[10px] uppercase tracking-widest text-[#1C1C1E]/50 mb-3">Legal</p>
+                <div className="flex flex-col gap-2.5 text-sm text-[#1C1C1E]/60">
                   <a href="/privacy" className="hover:text-[#1C1C1E] transition">Privacy Policy</a>
                   <a href="/terms" className="hover:text-[#1C1C1E] transition">Terms of Use</a>
                 </div>
               </div>
               <div>
-                <p className="font-bold text-[10px] uppercase tracking-widest text-[#1C1C1E]/25 mb-3">Company</p>
-                <div className="flex flex-col gap-2.5 text-sm text-[#1C1C1E]/45">
+                <p className="font-bold text-[10px] uppercase tracking-widest text-[#1C1C1E]/50 mb-3">Company</p>
+                <div className="flex flex-col gap-2.5 text-sm text-[#1C1C1E]/60">
                   <a href="mailto:support@stylefindr.app" className="hover:text-[#1C1C1E] transition">support@stylefindr.app</a>
                 </div>
               </div>
@@ -230,8 +227,8 @@ export default function Home() {
           </div>
 
           <div className="border-t border-[#1C1C1E]/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-[10px] text-[#1C1C1E]/20">&copy; 2026 StyleFindr. All rights reserved.</p>
-            <div className="flex gap-5 text-sm text-[#1C1C1E]/30">
+            <p className="text-[10px] text-[#1C1C1E]/40">&copy; 2026 StyleFindr. All rights reserved.</p>
+            <div className="flex gap-5 text-sm text-[#1C1C1E]/50">
               <a href="#" className="hover:text-[#1C1C1E] transition">Instagram</a>
               <a href="#" className="hover:text-[#1C1C1E] transition">TikTok</a>
             </div>

@@ -92,23 +92,30 @@ export default function Home() {
 
       {/* Save Money */}
       <section className="px-6 py-20 bg-white">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-10">Save Money</h2>
-          <div className="grid sm:grid-cols-2 gap-4">
-            {[
-              { item: 'Icy Blue Oversized Jacket', from: '$340', to: '$76' },
-              { item: 'Vintage Suede Coat', from: '$780', to: '$120' },
-              { item: 'Striped Knit Cardigan', from: '$190', to: '$44' },
-              { item: 'Cream Satin Slip Dress', from: '$980', to: '$210' },
-            ].map((d) => (
-              <div key={d.item} className="bg-[#F7F7F2] rounded-[14px] p-5">
-                <p className="font-bold text-sm mb-2">{d.item}</p>
-                <p className="text-sm">
-                  <span className="text-[#1C1C1E]/30 line-through">{d.from}</span>
-                  <span className="text-[#1C1C1E] font-black ml-2">→ {d.to}</span>
-                </p>
+        <div className="max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-6">Save Money</h2>
+              <div className="flex flex-col gap-4">
+                {[
+                  { item: 'Icy Blue Oversized Jacket', from: '$340', to: '$76' },
+                  { item: 'Vintage Suede Coat', from: '$780', to: '$120' },
+                  { item: 'Striped Knit Cardigan', from: '$190', to: '$44' },
+                  { item: 'Cream Satin Slip Dress', from: '$980', to: '$210' },
+                ].map((d) => (
+                  <div key={d.item} className="bg-[#F7F7F2] rounded-[14px] p-5">
+                    <p className="font-bold text-sm mb-2">{d.item}</p>
+                    <p className="text-sm">
+                      <span className="text-[#1C1C1E]/30 line-through">{d.from}</span>
+                      <span className="text-[#1C1C1E] font-black ml-2">→ {d.to}</span>
+                    </p>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+            <div className="flex justify-center">
+              <img src="/save-money.png" alt="StyleFinder finding the same style for less" className="w-64 md:w-72 rounded-[24px]" />
+            </div>
           </div>
         </div>
       </section>

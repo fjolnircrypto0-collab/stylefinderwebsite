@@ -67,21 +67,10 @@ export default function Home() {
       {/* Hero Image */}
       <section className="px-6 pt-8 pb-20">
         <div className="max-w-3xl mx-auto">
-          <div className="flex items-center justify-center gap-3 md:gap-4 mb-6">
-            <div className="flex-1 text-center">
-              <h3 className="text-lg md:text-xl font-black tracking-tight">Spot it</h3>
-              <p className="text-[11px] md:text-xs text-[#1C1C1E]/35 mt-0.5">Crop the item</p>
-            </div>
-            <div className="text-[#1C1C1E]/20 text-lg md:text-xl">→</div>
-            <div className="flex-1 text-center">
-              <h3 className="text-lg md:text-xl font-black tracking-tight">Scan it</h3>
-              <p className="text-[11px] md:text-xs text-[#1C1C1E]/35 mt-0.5">AI finds matches</p>
-            </div>
-            <div className="text-[#1C1C1E]/20 text-lg md:text-xl">→</div>
-            <div className="flex-1 text-center">
-              <h3 className="text-lg md:text-xl font-black tracking-tight">Shop it</h3>
-              <p className="text-[11px] md:text-xs text-[#1C1C1E]/35 mt-0.5">Buy for less</p>
-            </div>
+          <div className="grid grid-cols-[1fr_auto_1fr] items-center mb-4">
+            <h3 className="text-2xl md:text-3xl font-black tracking-tight text-center">Spot it.</h3>
+            <span className="text-2xl md:text-3xl text-[#1C1C1E] mx-4">→</span>
+            <h3 className="text-2xl md:text-3xl font-black tracking-tight text-center">Shop it.</h3>
           </div>
           <img
             src="/hero-phones.png"

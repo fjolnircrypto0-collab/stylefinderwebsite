@@ -47,12 +47,12 @@ export default function Home() {
             <span className="text-sm text-[#1C1C1E]/50 font-medium">Loved by thousands · ⭐ 4.9 rating</span>
           </div>
 
-          <h1 className="text-[2.5rem] md:text-[4.2rem] font-black tracking-tight leading-[1.08] mb-5">
+          <h1 className="text-[2.5rem] md:text-[4.2rem] font-black tracking-tight leading-[1.08] mb-5 text-[#1C1C1E]">
             Meet StyleFinder.<br />
-            <span className="text-[#1C1C1E]/25">Find any clothing</span><br />
-            <span className="text-[#1C1C1E]/25">with just a photo.</span>
+            Find any clothing<br />
+            with just a photo.
           </h1>
-          <p className="text-base md:text-[1.05rem] text-[#1C1C1E]/40 max-w-md leading-relaxed mb-8">
+          <p className="text-[15px] md:text-base text-[#1C1C1E]/50 max-w-md leading-[1.7] mb-8">
             Scan any clothing item with AI and find it across retailers and resale platforms at every price point. Same style, different price — so you always walk away with the best deal.
           </p>
 

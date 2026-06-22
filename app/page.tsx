@@ -50,7 +50,7 @@ export default function Home() {
               <img src="https://i.pravatar.cc/56?img=12" alt="" className="w-7 h-7 rounded-full border-2 border-[#EFEFEA] object-cover" />
               <img src="https://i.pravatar.cc/56?img=5" alt="" className="w-7 h-7 rounded-full border-2 border-[#EFEFEA] object-cover" />
             </div>
-            <span className="text-sm text-[#1C1C1E]/50 font-medium">Loved by 2,000+ users · ⭐ 4.9 rating</span>
+            <span className="text-sm text-[#1C1C1E]/50 font-medium">Loved by thousands · ⭐ 4.9 rating</span>
           </div>
 
           <h1 className="text-[2.75rem] md:text-[5rem] font-black tracking-tight leading-[1.05] mb-6">

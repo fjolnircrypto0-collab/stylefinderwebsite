@@ -80,143 +80,82 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Influencers */}
+      {/* Shop From Anywhere */}
       <section className="px-6 py-24">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black text-center tracking-tight mb-16">Worn by the people you follow 👀</h2>
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-4">Shop From Anywhere You See Style</h2>
+          <p className="text-[#1C1C1E]/45 text-base leading-relaxed max-w-xl">
+            Instagram screenshots. TikTok fits. Street style photos. Runway looks. Items in the mall you want to find for cheaper. If you can see it, StyleFinder can find it.
+          </p>
+        </div>
+      </section>
 
-          <div className="grid md:grid-cols-2 gap-4">
+      {/* Save Money */}
+      <section className="px-6 py-20 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-10">Save Money</h2>
+          <div className="grid sm:grid-cols-2 gap-4">
             {[
-              { handle: 'Erika M.', img: 'https://i.pravatar.cc/96?img=1', quote: 'okay so I screenshotted a jacket from a tiktok and this app found it in like 30 seconds?? I\'m actually shook' },
-              { handle: 'James T.', img: 'https://i.pravatar.cc/96?img=12', quote: 'my girlfriend showed me a coat she wanted for $300. I found basically the same one on Depop for $40 through this app lol' },
-              { handle: 'Priya S.', img: 'https://i.pravatar.cc/96?img=5', quote: 'finally something that gets what I mean when I say "that kind of top." Google lens never understood me like this' },
-              { handle: 'Marcus L.', img: 'https://i.pravatar.cc/96?img=8', quote: 'saw a fit on instagram, circled the hoodie, and it pulled up three similar ones under $50. this is dangerous for my wallet' },
-              { handle: 'Sofia R.', img: 'https://i.pravatar.cc/96?img=9', quote: 'the fact that it searches Depop AND regular stores at the same time is crazy. no other app does that' },
-              { handle: 'Alex K.', img: 'https://i.pravatar.cc/96?img=11', quote: 'used Google Lens for fashion for years and it was always trash. this actually works. like, properly works.' },
-            ].map((t) => (
-              <div key={t.handle} className="bg-white rounded-[14px] p-5 border-l-[3px] border-[#C8DEFF] flex gap-4 items-start">
-                <img src={t.img} alt={t.handle} className="w-11 h-11 rounded-full object-cover shrink-0" />
-                <div>
-                  <p className="font-bold text-sm mb-1">{t.handle}</p>
-                  <p className="text-[#1C1C1E]/45 text-sm leading-relaxed">&quot;{t.quote}&quot;</p>
-                </div>
+              { item: 'Icy Blue Oversized Jacket', from: '$340', to: '$76' },
+              { item: 'Vintage Suede Coat', from: '$780', to: '$120' },
+              { item: 'Striped Knit Cardigan', from: '$190', to: '$44' },
+              { item: 'Cream Satin Slip Dress', from: '$980', to: '$210' },
+            ].map((d) => (
+              <div key={d.item} className="bg-[#F7F7F2] rounded-[14px] p-5">
+                <p className="font-bold text-sm mb-2">{d.item}</p>
+                <p className="text-sm">
+                  <span className="text-[#1C1C1E]/30 line-through">{d.from}</span>
+                  <span className="text-[#1C1C1E] font-black ml-2">→ {d.to}</span>
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* What's Included */}
-      <section id="features" className="px-6 py-24 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black text-center tracking-tight mb-16">What does StyleFinder include?</h2>
-
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="bg-[#EFEFEA] rounded-[24px] aspect-[9/16] flex items-center justify-center">
-              <div className="text-center">
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  <Logo size={28} />
-                  <div className="flex items-baseline">
-                    <span className="text-3xl font-black">Style</span>
-                    <span className="text-3xl font-light">Finder</span>
-                    <span className="text-3xl font-black">.</span>
-                  </div>
-                </div>
-                <p className="text-[#1C1C1E]/25 text-sm">App Screenshot</p>
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-8">
-              {[
-                { emoji: '🔍', title: 'Visual scan', desc: 'Circle or photograph any clothing item to identify it instantly. Our AI analyzes color, pattern, material, fit, and style.' },
-                { emoji: '🛍', title: 'Multi-retailer results', desc: 'Shop new from top brands or find secondhand deals on Depop, eBay, and Grailed — all in one search.' },
-                { emoji: '💸', title: 'Every price point', desc: 'Same style, different price. From luxury to budget finds. Look expensive, spend less.' },
-                { emoji: '⚡', title: 'Powered by AI', desc: 'GPT-4o Vision + FashionCLIP for accurate visual matching. Understands every detail of what you\'re looking for.' },
-              ].map((f) => (
-                <div key={f.title} className="flex gap-4">
-                  <div className="text-2xl shrink-0 mt-0.5">{f.emoji}</div>
-                  <div>
-                    <h3 className="font-bold text-base mb-1">{f.title}</h3>
-                    <p className="text-[#1C1C1E]/45 leading-relaxed text-sm">{f.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+      {/* My Closet */}
+      <section className="px-6 py-24">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-6">My Closet</h2>
+          <div className="flex flex-col gap-5 text-[#1C1C1E]/50 text-base leading-relaxed">
+            <p>Every time you scan an item and something catches your eye, you like it and it goes straight into your Closet.</p>
+            <p>Over time, your Closet becomes your personal shopping list. Every piece you&apos;ve wanted, every deal you didn&apos;t want to lose — all in one place. No screenshots to dig through.</p>
+            <p>Just come back when you&apos;re ready to buy. It&apos;s all there waiting for you.</p>
           </div>
         </div>
       </section>
 
       {/* Why StyleFinder */}
-      <section id="how-it-works" className="px-6 py-24">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black text-center tracking-tight mb-3">Why choose StyleFinder?</h2>
-          <p className="text-[#1C1C1E]/40 text-center mb-16 text-base max-w-lg mx-auto">The only app that searches new and secondhand at the same time.</p>
+      <section id="features" className="px-6 py-24 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-16">Why StyleFinder?</h2>
 
-          <div className="grid md:grid-cols-3 gap-5">
-            {[
-              { title: 'Save your time', desc: 'No more endless scrolling. Scan any item and get visually matched results in seconds.' },
-              { title: 'New and secondhand in one search', desc: 'StyleFinder hits top retailers AND resale platforms — Depop, eBay, Grailed — so you always find the best price.' },
-              { title: 'Find it anywhere', desc: 'Runway photo. Street style. Your friend\'s outfit. Circle it. StyleFinder handles the rest.' },
-            ].map((b) => (
-              <div key={b.title} className="bg-white rounded-[14px] p-7">
-                <h3 className="font-bold text-base mb-2">{b.title}</h3>
-                <p className="text-[#1C1C1E]/45 leading-relaxed text-sm">{b.desc}</p>
-              </div>
-            ))}
+          <div className="flex flex-col gap-14">
+            <div>
+              <h3 className="text-xl font-black mb-2">Save Time</h3>
+              <p className="text-[#1C1C1E]/45 leading-relaxed">No more spending hours scrolling through Google, jumping between apps, or reverse image searching something that never leads anywhere. You see it, you crop it, StyleFinder finds it. Done in seconds.</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-black mb-2">Save Money</h3>
+              <p className="text-[#1C1C1E]/45 leading-relaxed">You&apos;ve been eyeing that jacket for weeks. StyleFinder finds you the same style for a fraction of the price. Same look. Different price. Every single time.</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-black mb-2">Upgrade Your Style</h3>
+              <p className="text-[#1C1C1E]/45 leading-relaxed">You already know what you like. You&apos;ve been screenshotting it, saving it, staring at it. StyleFinder just makes it real. Finally get your hands on the pieces you&apos;ve been drawn to and start dressing the way you&apos;ve always wanted to.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* New Feature — Dark */}
+      {/* Stop Waiting — Dark */}
       <section className="px-6 py-12">
-        <div className="max-w-5xl mx-auto bg-[#1C1C1E] rounded-[24px] p-10 md:p-14 flex flex-col md:flex-row items-center gap-10">
-          <div className="flex-1">
-            <span className="inline-block bg-white/10 text-white/60 text-[11px] font-bold px-3 py-1.5 rounded-full mb-5 tracking-wider uppercase">New feature</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight leading-tight mb-3">
-              Resale results —<br />find the same style for less 🏷️✨
-            </h2>
-            <p className="text-white/35 text-sm leading-relaxed">New features added regularly :)</p>
-          </div>
-          <div className="w-44 md:w-52 aspect-[9/16] bg-white/5 rounded-[24px] flex items-center justify-center shrink-0 border border-white/10">
-            <p className="text-white/15 text-xs text-center">App Screenshot</p>
-          </div>
-        </div>
-      </section>
-
-      {/* User Reviews */}
-      <section id="reviews" className="px-6 py-24 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black text-center tracking-tight mb-16">Thousands of users talk about us</h2>
-
-          <div className="grid md:grid-cols-3 gap-4">
-            {[
-              { name: 'Emma W.', img: 'https://i.pravatar.cc/96?img=16', quote: 'I\'ve been looking for this specific coat for months. Found it on Depop in literally 10 seconds. I almost cried lol' },
-              { name: 'Daniel H.', img: 'https://i.pravatar.cc/96?img=14', quote: 'honestly use this more than any other shopping app. it just gets what I want without me having to type anything' },
-              { name: 'Mia C.', img: 'https://i.pravatar.cc/96?img=20', quote: 'took a photo of my friend\'s sweater at dinner and found 4 similar ones before dessert came 😭💓' },
-              { name: 'Ryan P.', img: 'https://i.pravatar.cc/96?img=53', quote: 'downloaded it yesterday just to try and I\'ve already found two things I bought. 5 stars easy' },
-              { name: 'Jasmine L.', img: 'https://i.pravatar.cc/96?img=23', quote: 'if you shop based on vibes and aesthetics rather than brands, this is literally made for you' },
-              { name: 'Noah B.', img: 'https://i.pravatar.cc/96?img=52', quote: 'scanned a streetwear pic from pinterest and it found the exact pants AND cheaper alternatives. wild.' },
-            ].map((r) => (
-              <div key={r.name} className="bg-[#F7F7F2] rounded-[14px] p-5">
-                <div className="flex items-center gap-3 mb-3">
-                  <img src={r.img} alt={r.name} className="w-9 h-9 rounded-full object-cover" />
-                  <p className="text-sm font-bold">{r.name}</p>
-                </div>
-                <p className="text-[#1C1C1E]/50 text-sm leading-relaxed">&quot;{r.quote}&quot;</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Ratings — Dark */}
-      <section className="px-6 py-16">
-        <div className="max-w-3xl mx-auto bg-[#1C1C1E] rounded-[24px] p-12 text-center">
-          <div className="flex gap-0.5 justify-center mb-4">
-            {[...Array(5)].map((_, i) => <span key={i} className="text-yellow-400 text-2xl">★</span>)}
-          </div>
-          <h3 className="text-white text-3xl md:text-4xl font-black mb-1">Over 5,000 5-star ratings</h3>
-          <p className="text-white/35 text-sm mb-8">App Store 4.9/5</p>
+        <div className="max-w-3xl mx-auto bg-[#1C1C1E] rounded-[24px] p-10 md:p-14">
+          <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight leading-tight mb-4">
+            Stop Waiting. Start Wearing.
+          </h2>
+          <p className="text-white/40 leading-relaxed mb-8">
+            How many outfits are sitting in your camera roll right now that you never did anything about? StyleFinder is the push you needed. Spot it. Crop it. Shop it. The style upgrade you&apos;ve been putting off starts today.
+          </p>
           <a href="#download" className="inline-flex items-center justify-center gap-2 bg-white text-[#1C1C1E] font-bold px-7 py-3.5 rounded-[14px] text-sm hover:bg-white/90 transition">
             <svg width="16" height="16" viewBox="0 0 384 512" fill="#1C1C1E"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
             Download on App Store
@@ -224,7 +163,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Free Trial CTA */}
+      {/* Reviews */}
+      <section id="reviews" className="px-6 py-24">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-3">What Our Users Say</h2>
+          <p className="text-[#1C1C1E]/40 text-lg mb-16">The reviews speak for themselves.</p>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            {[
+              { quote: 'i have a folder on my phone with like 200 outfit screenshots i\'ve never done anything with. working through them all now. send help', name: 'Tom W.' },
+              { quote: 'ok why does this actually work', name: 'Leila K.' },
+              { quote: 'ok this is actually insane. i screenshotted some girl\'s outfit on instagram like 6 months ago and never did anything about it. uploaded it to stylefinder and found basically the same jacket on depop for £19. downloading this was the best decision i\'ve made this week', name: 'Sophie G.' },
+              { quote: 'Downloaded yesterday. 5 stars.', name: 'Marcus D.' },
+              { quote: 'I\'ve tried so many of these apps and they all suck. this one doesn\'t.', name: 'Leila K.' },
+              { quote: 'the fact that it searches depop AND regular stores at the same time is so smart. found a vintage bomber for £22 that\'s identical to one i\'ve seen all over tiktok. obsessed', name: 'Amara J.' },
+              { quote: 'my girlfriend showed me this and now i use it more than she does. found three pieces last week i\'d been looking for for months. actually crazy', name: 'Daniel F.' },
+              { quote: 'used to spend hours on google trying to find stuff i saw online. now i spend like 30 seconds on stylefinder. the time i\'ve saved alone is worth the subscription', name: 'Nia B.' },
+              { quote: 'bro i found the exact shoes kanye was wearing in a paparazzi photo from 2022. for $60. this app is not normal', name: 'Kevin S.' },
+            ].map((r, i) => (
+              <div key={i} className="bg-white rounded-[14px] p-6 border-l-[3px] border-[#C8DEFF]">
+                <div className="flex gap-0.5 mb-3">
+                  {[...Array(5)].map((_, j) => <span key={j} className="text-yellow-400 text-xs">★</span>)}
+                </div>
+                <p className="text-[#1C1C1E]/55 text-sm leading-relaxed mb-4">&quot;{r.quote}&quot;</p>
+                <p className="text-sm font-bold">— {r.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Download CTA */}
       <section id="download" className="px-6 py-24 bg-white">
         <div className="max-w-2xl mx-auto text-center">
           <div className="flex items-center justify-center gap-2 mb-6">
@@ -239,10 +208,9 @@ export default function Home() {
           <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#1C1C1E]/25 mb-5">Claim your 3-day free trial</p>
           <p className="text-[#1C1C1E]/35 text-xs mb-8 max-w-sm mx-auto">No commitment. Cancel anytime.</p>
 
-          <a href="#" className="inline-block bg-[#1C1C1E] text-white font-bold px-10 py-4.5 rounded-[14px] text-base hover:bg-[#1C1C1E]/90 transition mb-6" style={{ boxShadow: '0 0 24px rgba(200,222,255,0.5)' }}>
+          <a href="#" className="inline-block bg-[#1C1C1E] text-white font-bold px-10 py-4 rounded-[14px] text-base hover:bg-[#1C1C1E]/90 transition" style={{ boxShadow: '0 0 24px rgba(200,222,255,0.5)' }}>
             Download StyleFinder
           </a>
-
 
           <p className="text-[#1C1C1E]/15 text-[10px] mt-8 max-w-xs mx-auto">By downloading, you agree to our Terms of Service and Privacy Policy.</p>
         </div>

@@ -1,30 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 export default function Home() {
-  const Logo = ({ size = 20 }: { size?: number }) => (
-    <img src="/logo-icon.png" alt="" width={size} height={size} className="inline-block" style={{ filter: 'brightness(0)' }} />
-  );
-
   return (
     <div className="bg-[#F7F7F2] text-[#1C1C1E] min-h-screen" style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif' }}>
 
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[#F7F7F2]/80 border-b border-black/5">
         <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
-          <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2">
-              <Logo size={22} />
-              <div className="flex items-baseline">
-                <span className="text-xl font-black tracking-tight">Style</span>
-                <span className="text-xl font-light tracking-tight">Finder</span>
-                <span className="text-xl font-black">.</span>
-              </div>
-            </div>
-            <div className="hidden md:flex items-center gap-6 text-sm text-[#1C1C1E]/40 font-medium">
-              <a href="#" className="hover:text-[#1C1C1E] transition">Home</a>
-              <a href="/privacy" className="hover:text-[#1C1C1E] transition">Privacy</a>
-            </div>
-          </div>
-          <a href="#download" className="hidden sm:inline-flex items-center gap-1.5 bg-[#1C1C1E] text-white text-xs font-semibold px-4 py-2 rounded-[10px] hover:bg-[#1C1C1E]/90 transition">
+          <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex items-baseline">
+            <span className="text-xl font-black tracking-tight">Style</span>
+            <span className="text-xl font-light tracking-tight">Finder</span>
+            <span className="text-xl font-black">.</span>
+          </a>
+          <a href="#download" className="inline-flex items-center gap-1.5 bg-[#1C1C1E] text-white text-xs font-semibold px-4 py-2 rounded-[10px] hover:bg-[#1C1C1E]/90 transition">
             <svg width="14" height="14" viewBox="0 0 384 512" fill="white"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
             App Store
           </a>
@@ -36,9 +23,9 @@ export default function Home() {
         <div className="max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-3 bg-[#EFEFEA] rounded-full px-4 py-2 mb-8">
             <div className="flex -space-x-2">
-              <img src="https://i.pravatar.cc/56?img=1" alt="" className="w-7 h-7 rounded-full border-2 border-[#EFEFEA] object-cover" />
-              <img src="https://i.pravatar.cc/56?img=12" alt="" className="w-7 h-7 rounded-full border-2 border-[#EFEFEA] object-cover" />
-              <img src="https://i.pravatar.cc/56?img=5" alt="" className="w-7 h-7 rounded-full border-2 border-[#EFEFEA] object-cover" />
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="" className="w-7 h-7 rounded-full border-2 border-[#EFEFEA] object-cover" />
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="" className="w-7 h-7 rounded-full border-2 border-[#EFEFEA] object-cover" />
+              <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="" className="w-7 h-7 rounded-full border-2 border-[#EFEFEA] object-cover" />
             </div>
             <span className="text-sm text-[#1C1C1E]/50 font-medium">Loved by thousands · ⭐ 4.9 rating</span>
           </div>
@@ -78,19 +65,25 @@ export default function Home() {
           <p className="text-[#1C1C1E]/45 text-base leading-relaxed mb-8">
             Instagram screenshots. TikTok fits. Street style photos. Runway looks. Items in the mall you want to find for cheaper. If you can see it, StyleFinder can find it.
           </p>
-          <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2 bg-[#EFEFEA] rounded-full px-4 py-2">
-              <svg width="20" height="20" viewBox="0 0 448 512" fill="#1C1C1E" opacity="0.5"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
-              <span className="text-sm text-[#1C1C1E]/50 font-medium">Instagram</span>
-            </div>
-            <div className="flex items-center gap-2 bg-[#EFEFEA] rounded-full px-4 py-2">
-              <svg width="20" height="20" viewBox="0 0 448 512" fill="#1C1C1E" opacity="0.5"><path d="M448 209.9a210.1 210.1 0 0 1-122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"/></svg>
-              <span className="text-sm text-[#1C1C1E]/50 font-medium">TikTok</span>
-            </div>
-            <div className="flex items-center gap-2 bg-[#EFEFEA] rounded-full px-4 py-2">
-              <svg width="20" height="20" viewBox="0 0 384 512" fill="#1C1C1E" opacity="0.5"><path d="M204 6.5C101.4 6.5 0 74.9 0 185.6 0 256 39.6 296 63.6 296c9.9 0 15.6-27.6 15.6-35.4 0-9.3-23.7-29.1-23.7-67.8 0-80.4 61.2-137.4 140.4-137.4 68.1 0 118.5 38.7 118.5 109.8 0 53.1-21.3 152.7-90.3 152.7-24.9 0-46.2-18-46.2-43.8 0-37.8 26.4-74.4 26.4-113.4 0-66.2-93.9-54.2-93.9 25.8 0 16.8 2.1 35.4 9.6 50.7-13.8 59.4-42 147.9-42 209.1 0 18.9 2.7 37.5 4.5 56.4 3.4 3.8 1.7 3.4 6.9 1.5 50.4-69 48.6-82.5 71.4-172.8 12.3 23.4 44.1 36 69.3 36 106.2 0 153.9-103.5 153.9-196.8C384 71.3 298.2 6.5 204 6.5z"/></svg>
-              <span className="text-sm text-[#1C1C1E]/50 font-medium">Pinterest</span>
-            </div>
+          <div className="flex flex-wrap gap-3">
+            {[
+              { name: 'Instagram', color: 'bg-gradient-to-br from-[#833AB4] via-[#E1306C] to-[#F77737]', text: 'text-white' },
+              { name: 'TikTok', color: 'bg-[#000000]', text: 'text-white' },
+              { name: 'Pinterest', color: 'bg-[#E60023]', text: 'text-white' },
+              { name: 'X', color: 'bg-[#000000]', text: 'text-white' },
+              { name: 'Snapchat', color: 'bg-[#FFFC00]', text: 'text-[#1C1C1E]' },
+              { name: 'Facebook', color: 'bg-[#1877F2]', text: 'text-white' },
+              { name: 'Depop', color: 'bg-[#FF2300]', text: 'text-white' },
+              { name: 'Grailed', color: 'bg-[#1C1C1E]', text: 'text-white' },
+              { name: 'eBay', color: 'bg-[#0064D2]', text: 'text-white' },
+              { name: 'Google', color: 'bg-white border border-[#1C1C1E]/10', text: 'text-[#1C1C1E]' },
+              { name: 'Magazines', color: 'bg-[#1C1C1E]/10', text: 'text-[#1C1C1E]' },
+              { name: 'Real Life', color: 'bg-[#1C1C1E]/10', text: 'text-[#1C1C1E]' },
+            ].map((p) => (
+              <span key={p.name} className={`${p.color} ${p.text} text-xs font-bold px-4 py-2 rounded-full`}>
+                {p.name}
+              </span>
+            ))}
           </div>
         </div>
       </section>
@@ -107,33 +100,50 @@ export default function Home() {
       </section>
 
       {/* My Closet */}
-      <section className="px-6 py-24 bg-white">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-6">My Closet</h2>
-          <div className="flex flex-col gap-5 text-[#1C1C1E]/50 text-base leading-relaxed">
-            <p>Every time you scan an item and something catches your eye, you like it and it goes straight into your Closet.</p>
-            <p>Over time, your Closet becomes your personal shopping list. Every piece you&apos;ve wanted, every deal you didn&apos;t want to lose — all in one place. No screenshots to dig through.</p>
-            <p>Just come back when you&apos;re ready to buy. It&apos;s all there waiting for you.</p>
+      <section className="px-6 py-24">
+        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-6">My Closet</h2>
+            <div className="flex flex-col gap-4 text-[#1C1C1E]/50 text-[15px] leading-relaxed">
+              <p>Every time you scan an item and something catches your eye, you like it and it goes straight into your Closet.</p>
+              <p>Over time, your Closet becomes your personal shopping list. Every piece you&apos;ve wanted, every deal you didn&apos;t want to lose — all in one place.</p>
+              <p>Just come back when you&apos;re ready to buy. It&apos;s all there waiting for you.</p>
+            </div>
+          </div>
+          <div className="bg-[#EFEFEA] rounded-[24px] aspect-[9/16] flex items-center justify-center">
+            <p className="text-[#1C1C1E]/20 text-sm">Closet Screenshot</p>
           </div>
         </div>
       </section>
 
-      {/* Why StyleFinder */}
-      <section id="features" className="px-6 py-24">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-16">Why StyleFinder?</h2>
-          <div className="flex flex-col gap-14">
-            <div>
-              <h3 className="text-xl font-black mb-2">Save Time</h3>
-              <p className="text-[#1C1C1E]/45 leading-relaxed">No more spending hours scrolling through Google, jumping between apps, or reverse image searching something that never leads anywhere. You see it, you crop it, StyleFinder finds it. Done in seconds.</p>
+      {/* Why StyleFinder — Columns */}
+      <section id="features" className="px-6 py-24 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-center mb-16">Why StyleFinder?</h2>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-[#F7F7F2] rounded-[20px] p-8 flex flex-col">
+              <div className="w-12 h-12 rounded-[14px] bg-[#1C1C1E] flex items-center justify-center mb-5">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <h3 className="text-lg font-black mb-2">Save Time</h3>
+              <p className="text-[#1C1C1E]/45 text-sm leading-relaxed">No more spending hours scrolling through Google or jumping between apps. You see it, you crop it, StyleFinder finds it. Done in seconds.</p>
             </div>
-            <div>
-              <h3 className="text-xl font-black mb-2">Save Money</h3>
-              <p className="text-[#1C1C1E]/45 leading-relaxed">You&apos;ve been eyeing that jacket for weeks. StyleFinder finds you the same style for a fraction of the price. Same look. Different price. Every single time.</p>
+
+            <div className="bg-[#F7F7F2] rounded-[20px] p-8 flex flex-col">
+              <div className="w-12 h-12 rounded-[14px] bg-[#1C1C1E] flex items-center justify-center mb-5">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+              <h3 className="text-lg font-black mb-2">Save Money</h3>
+              <p className="text-[#1C1C1E]/45 text-sm leading-relaxed">You&apos;ve been eyeing that jacket for weeks. StyleFinder finds you the same style for a fraction of the price. Same look. Different price. Every single time.</p>
             </div>
-            <div>
-              <h3 className="text-xl font-black mb-2">Upgrade Your Style</h3>
-              <p className="text-[#1C1C1E]/45 leading-relaxed">You already know what you like. You&apos;ve been screenshotting it, saving it, staring at it. StyleFinder just makes it real. Finally get your hands on the pieces you&apos;ve been drawn to and start dressing the way you&apos;ve always wanted to.</p>
+
+            <div className="bg-[#F7F7F2] rounded-[20px] p-8 flex flex-col">
+              <div className="w-12 h-12 rounded-[14px] bg-[#1C1C1E] flex items-center justify-center mb-5">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+              <h3 className="text-lg font-black mb-2">Upgrade Your Style</h3>
+              <p className="text-[#1C1C1E]/45 text-sm leading-relaxed">You already know what you like. StyleFinder just makes it real. Finally get your hands on the pieces you&apos;ve been drawn to and dress the way you&apos;ve always wanted.</p>
             </div>
           </div>
         </div>
@@ -163,25 +173,22 @@ export default function Home() {
 
           <div className="columns-1 md:columns-2 gap-4 space-y-4">
             {[
-              { quote: 'i have a folder on my phone with like 200 outfit screenshots i\'ve never done anything with. working through them all now. send help', name: 'Tom W.', img: 'https://randomuser.me/api/portraits/men/32.jpg' },
-              { quote: 'ok why does this actually work', name: 'Leila K.', img: 'https://randomuser.me/api/portraits/women/44.jpg' },
-              { quote: 'ok this is actually insane. i screenshotted some girl\'s outfit on instagram like 6 months ago and never did anything about it. uploaded it to stylefinder and found basically the same jacket on depop for £19. downloading this was the best decision i\'ve made this week', name: 'Sophie G.', img: 'https://randomuser.me/api/portraits/women/68.jpg' },
-              { quote: 'Downloaded yesterday. 5 stars.', name: 'Marcus D.', img: 'https://randomuser.me/api/portraits/men/75.jpg' },
-              { quote: 'I\'ve tried so many of these apps and they all suck. this one doesn\'t.', name: 'Jade R.', img: 'https://randomuser.me/api/portraits/women/79.jpg' },
-              { quote: 'the fact that it searches depop AND regular stores at the same time is so smart. found a vintage bomber for £22 that\'s identical to one i\'ve seen all over tiktok. obsessed', name: 'Amara J.', img: 'https://randomuser.me/api/portraits/women/21.jpg' },
-              { quote: 'my girlfriend showed me this and now i use it more than she does. found three pieces last week i\'d been looking for for months. actually crazy', name: 'Daniel F.', img: 'https://randomuser.me/api/portraits/men/45.jpg' },
-              { quote: 'used to spend hours on google trying to find stuff i saw online. now i spend like 30 seconds on stylefinder. the time i\'ve saved alone is worth the subscription', name: 'Nia B.', img: 'https://randomuser.me/api/portraits/women/32.jpg' },
-              { quote: 'bro i found the exact shoes kanye was wearing in a paparazzi photo from 2022. for $60. this app is not normal', name: 'Kevin S.', img: 'https://randomuser.me/api/portraits/men/22.jpg' },
+              { quote: 'i have a folder on my phone with like 200 outfit screenshots i\'ve never done anything with. working through them all now. send help', name: 'Tom W.' },
+              { quote: 'ok why does this actually work', name: 'Leila K.' },
+              { quote: 'ok this is actually insane. i screenshotted some girl\'s outfit on instagram like 6 months ago and never did anything about it. uploaded it to stylefinder and found basically the same jacket on depop for £19. downloading this was the best decision i\'ve made this week', name: 'Sophie G.' },
+              { quote: 'Downloaded yesterday. 5 stars.', name: 'Marcus D.' },
+              { quote: 'I\'ve tried so many of these apps and they all suck. this one doesn\'t.', name: 'Jade R.' },
+              { quote: 'the fact that it searches depop AND regular stores at the same time is so smart. found a vintage bomber for £22 that\'s identical to one i\'ve seen all over tiktok. obsessed', name: 'Amara J.' },
+              { quote: 'my girlfriend showed me this and now i use it more than she does. found three pieces last week i\'d been looking for for months. actually crazy', name: 'Daniel F.' },
+              { quote: 'used to spend hours on google trying to find stuff i saw online. now i spend like 30 seconds on stylefinder. the time i\'ve saved alone is worth the subscription', name: 'Nia B.' },
+              { quote: 'bro i found the exact shoes kanye was wearing in a paparazzi photo from 2022. for $60. this app is not normal', name: 'Kevin S.' },
             ].map((r, i) => (
               <div key={i} className="break-inside-avoid bg-[#F7F7F2] rounded-[16px] p-6">
                 <div className="flex gap-0.5 mb-3">
                   {[...Array(5)].map((_, j) => <span key={j} className="text-yellow-400 text-xs">★</span>)}
                 </div>
-                <p className="text-[#1C1C1E]/55 text-sm leading-relaxed mb-5">&quot;{r.quote}&quot;</p>
-                <div className="flex items-center gap-3">
-                  <img src={r.img} alt={r.name} className="w-9 h-9 rounded-full object-cover" />
-                  <p className="text-sm font-bold">{r.name}</p>
-                </div>
+                <p className="text-[#1C1C1E]/55 text-sm leading-relaxed mb-4">&quot;{r.quote}&quot;</p>
+                <p className="text-sm font-bold">— {r.name}</p>
               </div>
             ))}
           </div>
@@ -191,13 +198,10 @@ export default function Home() {
       {/* Download CTA */}
       <section id="download" className="px-6 py-24">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-2 mb-6">
-            <Logo size={24} />
-            <div className="flex items-baseline">
-              <span className="text-2xl font-black">Style</span>
-              <span className="text-2xl font-light">Finder</span>
-              <span className="text-2xl font-black">.</span>
-            </div>
+          <div className="flex items-baseline justify-center mb-6">
+            <span className="text-2xl font-black">Style</span>
+            <span className="text-2xl font-light">Finder</span>
+            <span className="text-2xl font-black">.</span>
           </div>
 
           <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#1C1C1E]/25 mb-5">Claim your 3-day free trial</p>
@@ -216,13 +220,10 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col md:flex-row items-start justify-between gap-10 mb-10">
             <div>
-              <div className="flex items-center gap-1.5 mb-1">
-                <Logo size={18} />
-                <div className="flex items-baseline">
-                  <span className="text-lg font-black">Style</span>
-                  <span className="text-lg font-light">Finder</span>
-                  <span className="text-lg font-black">.</span>
-                </div>
+              <div className="flex items-baseline mb-1">
+                <span className="text-lg font-black">Style</span>
+                <span className="text-lg font-light">Finder</span>
+                <span className="text-lg font-black">.</span>
               </div>
               <p className="text-[#1C1C1E]/25 text-xs">Same style, different price.</p>
             </div>

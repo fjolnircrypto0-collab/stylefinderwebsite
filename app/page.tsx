@@ -23,7 +23,7 @@ export default function Home() {
               <a href="#" className="hover:text-[#1C1C1E] transition">Home</a>
               <a href="#" className="hover:text-[#1C1C1E] transition">Blog</a>
               <a href="#" className="hover:text-[#1C1C1E] transition">Press</a>
-              <a href="#" className="hover:text-[#1C1C1E] transition">Privacy Policy</a>
+              <a href="/privacy" className="hover:text-[#1C1C1E] transition">Privacy</a>
               <a href="#" className="hover:text-[#1C1C1E] transition">Login</a>
             </div>
           </div>
@@ -219,7 +219,7 @@ export default function Home() {
             Download StyleFinder
           </a>
 
-          <p className="text-[#1C1C1E]/15 text-[10px] mt-8 max-w-xs mx-auto">By downloading, you agree to our Terms of Service and Privacy Policy.</p>
+          <p className="text-[#1C1C1E]/15 text-[10px] mt-8 max-w-xs mx-auto">By downloading, you agree to our Terms of Service and Privacy.</p>
         </div>
       </section>
 
@@ -243,8 +243,8 @@ export default function Home() {
               <div>
                 <p className="font-bold text-[10px] uppercase tracking-widest text-[#1C1C1E]/25 mb-3">Legal</p>
                 <div className="flex flex-col gap-2.5 text-sm text-[#1C1C1E]/45">
-                  <a href="#" className="hover:text-[#1C1C1E] transition">Privacy Policy</a>
-                  <a href="#" className="hover:text-[#1C1C1E] transition">Terms of Use</a>
+                  <a href="/privacy" className="hover:text-[#1C1C1E] transition">Privacy</a>
+                  <a href="/terms" className="hover:text-[#1C1C1E] transition">Terms of Use</a>
                   <a href="#" className="hover:text-[#1C1C1E] transition">GDPR Notice</a>
                   <a href="#" className="hover:text-[#1C1C1E] transition">Data Disclosure</a>
                 </div>

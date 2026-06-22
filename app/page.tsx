@@ -67,6 +67,16 @@ export default function Home() {
       {/* Hero Image */}
       <section className="px-6 pt-8 pb-20">
         <div className="max-w-3xl mx-auto">
+          <div className="grid grid-cols-2 gap-6 mb-6">
+            <div className="text-center">
+              <h3 className="text-xl md:text-2xl font-black tracking-tight">Spot it.</h3>
+              <p className="text-xs md:text-sm text-[#1C1C1E]/40 mt-1">Crop the item you want to find.</p>
+            </div>
+            <div className="text-center">
+              <h3 className="text-xl md:text-2xl font-black tracking-tight">Shop it.</h3>
+              <p className="text-xs md:text-sm text-[#1C1C1E]/40 mt-1">Get instant matches from top stores.</p>
+            </div>
+          </div>
           <img
             src="/hero-phones.png"
             alt="StyleFinder app — scan a clothing item and get instant shopping results"

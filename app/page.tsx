@@ -21,10 +21,7 @@ export default function Home() {
             </div>
             <div className="hidden md:flex items-center gap-6 text-sm text-[#1C1C1E]/40 font-medium">
               <a href="#" className="hover:text-[#1C1C1E] transition">Home</a>
-              <a href="#" className="hover:text-[#1C1C1E] transition">Blog</a>
-              <a href="#" className="hover:text-[#1C1C1E] transition">Press</a>
               <a href="/privacy" className="hover:text-[#1C1C1E] transition">Privacy</a>
-              <a href="#" className="hover:text-[#1C1C1E] transition">Login</a>
             </div>
           </div>
           <a href="#download" className="hidden sm:inline-flex items-center gap-1.5 bg-[#1C1C1E] text-white text-xs font-semibold px-4 py-2 rounded-[10px] hover:bg-[#1C1C1E]/90 transition">
@@ -37,7 +34,6 @@ export default function Home() {
       {/* Hero */}
       <section className="pt-28 pb-8 px-6">
         <div className="max-w-3xl mx-auto">
-          {/* Social proof pill */}
           <div className="inline-flex items-center gap-3 bg-[#EFEFEA] rounded-full px-4 py-2 mb-8">
             <div className="flex -space-x-2">
               <img src="https://i.pravatar.cc/56?img=1" alt="" className="w-7 h-7 rounded-full border-2 border-[#EFEFEA] object-cover" />
@@ -56,7 +52,6 @@ export default function Home() {
             Scan any clothing item with AI and find it across retailers and resale platforms at every price point. Same style, different price — so you always walk away with the best deal.
           </p>
 
-          {/* CTA button */}
           <a href="#download" className="inline-flex items-center justify-center gap-2 bg-[#1C1C1E] text-white font-bold px-7 py-3.5 rounded-[14px] text-sm hover:bg-[#1C1C1E]/90 transition" style={{ boxShadow: '0 0 24px rgba(200,222,255,0.5)' }}>
             <svg width="16" height="16" viewBox="0 0 384 512" fill="white"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
             Download on App Store
@@ -72,56 +67,28 @@ export default function Home() {
             <span className="text-2xl md:text-3xl text-[#1C1C1E] mx-4">→</span>
             <h3 className="text-2xl md:text-3xl font-black tracking-tight text-center">Shop it.</h3>
           </div>
-          <img
-            src="/hero-phones.png"
-            alt="StyleFinder app — scan a clothing item and get instant shopping results"
-            className="w-full rounded-[20px]"
-          />
+          <img src="/hero-phones.png" alt="StyleFinder app" className="w-full rounded-[20px]" />
         </div>
       </section>
 
-      {/* Shop From Anywhere */}
+      {/* Shop From Anywhere + Save Money — side by side */}
       <section className="px-6 py-24">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-4">Shop From Anywhere You See Style</h2>
-          <p className="text-[#1C1C1E]/45 text-base leading-relaxed max-w-xl">
-            Instagram screenshots. TikTok fits. Street style photos. Runway looks. Items in the mall you want to find for cheaper. If you can see it, StyleFinder can find it.
-          </p>
-        </div>
-      </section>
-
-      {/* Save Money */}
-      <section className="px-6 py-20 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-6">Save Money</h2>
-              <div className="flex flex-col gap-4">
-                {[
-                  { item: 'Icy Blue Oversized Jacket', from: '$340', to: '$76' },
-                  { item: 'Vintage Suede Coat', from: '$780', to: '$120' },
-                  { item: 'Striped Knit Cardigan', from: '$190', to: '$44' },
-                  { item: 'Cream Satin Slip Dress', from: '$980', to: '$210' },
-                ].map((d) => (
-                  <div key={d.item} className="bg-[#F7F7F2] rounded-[14px] p-5">
-                    <p className="font-bold text-sm mb-2">{d.item}</p>
-                    <p className="text-sm">
-                      <span className="text-[#1C1C1E]/30 line-through">{d.from}</span>
-                      <span className="text-[#1C1C1E] font-black ml-2">→ {d.to}</span>
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="flex justify-center">
-              <img src="/save-money.png" alt="StyleFinder finding the same style for less" className="w-64 md:w-72 rounded-[24px]" />
-            </div>
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-4">Shop From Anywhere You See Style</h2>
+            <p className="text-[#1C1C1E]/45 text-base leading-relaxed">
+              Instagram screenshots. TikTok fits. Street style photos. Runway looks. Items in the mall you want to find for cheaper. If you can see it, StyleFinder can find it.
+            </p>
+          </div>
+          <div>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-6">Save Money</h2>
+            <img src="/save-money.png" alt="Same style, different price" className="w-56 md:w-64 rounded-[24px]" />
           </div>
         </div>
       </section>
 
       {/* My Closet */}
-      <section className="px-6 py-24">
+      <section className="px-6 py-24 bg-white">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-6">My Closet</h2>
           <div className="flex flex-col gap-5 text-[#1C1C1E]/50 text-base leading-relaxed">
@@ -133,10 +100,9 @@ export default function Home() {
       </section>
 
       {/* Why StyleFinder */}
-      <section id="features" className="px-6 py-24 bg-white">
+      <section id="features" className="px-6 py-24">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-16">Why StyleFinder?</h2>
-
           <div className="flex flex-col gap-14">
             <div>
               <h3 className="text-xl font-black mb-2">Save Time</h3>
@@ -171,29 +137,32 @@ export default function Home() {
       </section>
 
       {/* Reviews */}
-      <section id="reviews" className="px-6 py-24">
+      <section id="reviews" className="px-6 py-24 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-3">What Our Users Say</h2>
-          <p className="text-[#1C1C1E]/40 text-lg mb-16">The reviews speak for themselves.</p>
+          <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#1C1C1E]/25 mb-3">What Our Users Say</p>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-16">The reviews speak for themselves.</h2>
 
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="columns-1 md:columns-2 gap-4 space-y-4">
             {[
-              { quote: 'i have a folder on my phone with like 200 outfit screenshots i\'ve never done anything with. working through them all now. send help', name: 'Tom W.' },
-              { quote: 'ok why does this actually work', name: 'Leila K.' },
-              { quote: 'ok this is actually insane. i screenshotted some girl\'s outfit on instagram like 6 months ago and never did anything about it. uploaded it to stylefinder and found basically the same jacket on depop for £19. downloading this was the best decision i\'ve made this week', name: 'Sophie G.' },
-              { quote: 'Downloaded yesterday. 5 stars.', name: 'Marcus D.' },
-              { quote: 'I\'ve tried so many of these apps and they all suck. this one doesn\'t.', name: 'Leila K.' },
-              { quote: 'the fact that it searches depop AND regular stores at the same time is so smart. found a vintage bomber for £22 that\'s identical to one i\'ve seen all over tiktok. obsessed', name: 'Amara J.' },
-              { quote: 'my girlfriend showed me this and now i use it more than she does. found three pieces last week i\'d been looking for for months. actually crazy', name: 'Daniel F.' },
-              { quote: 'used to spend hours on google trying to find stuff i saw online. now i spend like 30 seconds on stylefinder. the time i\'ve saved alone is worth the subscription', name: 'Nia B.' },
-              { quote: 'bro i found the exact shoes kanye was wearing in a paparazzi photo from 2022. for $60. this app is not normal', name: 'Kevin S.' },
+              { quote: 'i have a folder on my phone with like 200 outfit screenshots i\'ve never done anything with. working through them all now. send help', name: 'Tom W.', img: 'https://i.pravatar.cc/80?img=57' },
+              { quote: 'ok why does this actually work', name: 'Leila K.', img: 'https://i.pravatar.cc/80?img=47' },
+              { quote: 'ok this is actually insane. i screenshotted some girl\'s outfit on instagram like 6 months ago and never did anything about it. uploaded it to stylefinder and found basically the same jacket on depop for £19. downloading this was the best decision i\'ve made this week', name: 'Sophie G.', img: 'https://i.pravatar.cc/80?img=44' },
+              { quote: 'Downloaded yesterday. 5 stars.', name: 'Marcus D.', img: 'https://i.pravatar.cc/80?img=51' },
+              { quote: 'I\'ve tried so many of these apps and they all suck. this one doesn\'t.', name: 'Leila K.', img: 'https://i.pravatar.cc/80?img=32' },
+              { quote: 'the fact that it searches depop AND regular stores at the same time is so smart. found a vintage bomber for £22 that\'s identical to one i\'ve seen all over tiktok. obsessed', name: 'Amara J.', img: 'https://i.pravatar.cc/80?img=25' },
+              { quote: 'my girlfriend showed me this and now i use it more than she does. found three pieces last week i\'d been looking for for months. actually crazy', name: 'Daniel F.', img: 'https://i.pravatar.cc/80?img=60' },
+              { quote: 'used to spend hours on google trying to find stuff i saw online. now i spend like 30 seconds on stylefinder. the time i\'ve saved alone is worth the subscription', name: 'Nia B.', img: 'https://i.pravatar.cc/80?img=26' },
+              { quote: 'bro i found the exact shoes kanye was wearing in a paparazzi photo from 2022. for $60. this app is not normal', name: 'Kevin S.', img: 'https://i.pravatar.cc/80?img=68' },
             ].map((r, i) => (
-              <div key={i} className="bg-white rounded-[14px] p-6 border-l-[3px] border-[#C8DEFF]">
+              <div key={i} className="break-inside-avoid bg-[#F7F7F2] rounded-[16px] p-6">
                 <div className="flex gap-0.5 mb-3">
                   {[...Array(5)].map((_, j) => <span key={j} className="text-yellow-400 text-xs">★</span>)}
                 </div>
-                <p className="text-[#1C1C1E]/55 text-sm leading-relaxed mb-4">&quot;{r.quote}&quot;</p>
-                <p className="text-sm font-bold">— {r.name}</p>
+                <p className="text-[#1C1C1E]/55 text-sm leading-relaxed mb-5">&quot;{r.quote}&quot;</p>
+                <div className="flex items-center gap-3">
+                  <img src={r.img} alt={r.name} className="w-9 h-9 rounded-full object-cover" />
+                  <p className="text-sm font-bold">{r.name}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -201,7 +170,7 @@ export default function Home() {
       </section>
 
       {/* Download CTA */}
-      <section id="download" className="px-6 py-24 bg-white">
+      <section id="download" className="px-6 py-24">
         <div className="max-w-2xl mx-auto text-center">
           <div className="flex items-center justify-center gap-2 mb-6">
             <Logo size={24} />
@@ -219,7 +188,7 @@ export default function Home() {
             Download StyleFinder
           </a>
 
-          <p className="text-[#1C1C1E]/15 text-[10px] mt-8 max-w-xs mx-auto">By downloading, you agree to our Terms of Service and Privacy.</p>
+          <p className="text-[#1C1C1E]/15 text-[10px] mt-8 max-w-xs mx-auto">By downloading, you agree to our Terms of Service and Privacy Policy.</p>
         </div>
       </section>
 
@@ -243,23 +212,21 @@ export default function Home() {
               <div>
                 <p className="font-bold text-[10px] uppercase tracking-widest text-[#1C1C1E]/25 mb-3">Legal</p>
                 <div className="flex flex-col gap-2.5 text-sm text-[#1C1C1E]/45">
-                  <a href="/privacy" className="hover:text-[#1C1C1E] transition">Privacy</a>
+                  <a href="/privacy" className="hover:text-[#1C1C1E] transition">Privacy Policy</a>
                   <a href="/terms" className="hover:text-[#1C1C1E] transition">Terms of Use</a>
-                  <a href="#" className="hover:text-[#1C1C1E] transition">GDPR Notice</a>
-                  <a href="#" className="hover:text-[#1C1C1E] transition">Data Disclosure</a>
                 </div>
               </div>
               <div>
                 <p className="font-bold text-[10px] uppercase tracking-widest text-[#1C1C1E]/25 mb-3">Company</p>
                 <div className="flex flex-col gap-2.5 text-sm text-[#1C1C1E]/45">
-                  <a href="mailto:stylefinder.app@gmail.com" className="hover:text-[#1C1C1E] transition">stylefinder.app@gmail.com</a>
+                  <a href="mailto:support@stylefindr.app" className="hover:text-[#1C1C1E] transition">support@stylefindr.app</a>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="border-t border-[#1C1C1E]/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-[10px] text-[#1C1C1E]/20">&copy; 2026 StyleFinder. All rights reserved.</p>
+            <p className="text-[10px] text-[#1C1C1E]/20">&copy; 2026 StyleFindr. All rights reserved.</p>
             <div className="flex gap-5 text-sm text-[#1C1C1E]/30">
               <a href="#" className="hover:text-[#1C1C1E] transition">Instagram</a>
               <a href="#" className="hover:text-[#1C1C1E] transition">TikTok</a>

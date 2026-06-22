@@ -6,7 +6,7 @@ export default function Home() {
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[#F7F7F2]/80 border-b border-black/5">
         <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
-          <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex items-baseline">
+          <a href="/" className="flex items-baseline">
             <span className="text-xl font-black tracking-tight">Style</span>
             <span className="text-xl font-light tracking-tight">Finder</span>
             <span className="text-xl font-black">.</span>

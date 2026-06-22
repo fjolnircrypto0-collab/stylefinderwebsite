@@ -99,22 +99,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* My Closet */}
-      <section className="px-6 py-24">
-        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-6">My Closet</h2>
-            <div className="flex flex-col gap-4 text-[#1C1C1E]/50 text-[15px] leading-relaxed">
-              <p>Every time you scan an item and something catches your eye, you like it and it goes straight into your Closet.</p>
-              <p>Over time, your Closet becomes your personal shopping list. Every piece you&apos;ve wanted, every deal you didn&apos;t want to lose — all in one place.</p>
-              <p>Just come back when you&apos;re ready to buy. It&apos;s all there waiting for you.</p>
-            </div>
-          </div>
-          <div className="bg-[#EFEFEA] rounded-[24px] aspect-[9/16] flex items-center justify-center">
-            <p className="text-[#1C1C1E]/20 text-sm">Closet Screenshot</p>
-          </div>
-        </div>
-      </section>
 
       {/* Why StyleFinder — Columns */}
       <section id="features" className="px-6 py-24 bg-white">

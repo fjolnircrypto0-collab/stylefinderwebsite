@@ -144,15 +144,15 @@ export default function Home() {
 
           <div className="columns-1 md:columns-2 gap-4 space-y-4">
             {[
-              { quote: 'i have a folder on my phone with like 200 outfit screenshots i\'ve never done anything with. working through them all now. send help', name: 'Tom W.', img: 'https://i.pravatar.cc/80?img=57' },
-              { quote: 'ok why does this actually work', name: 'Leila K.', img: 'https://i.pravatar.cc/80?img=47' },
-              { quote: 'ok this is actually insane. i screenshotted some girl\'s outfit on instagram like 6 months ago and never did anything about it. uploaded it to stylefinder and found basically the same jacket on depop for £19. downloading this was the best decision i\'ve made this week', name: 'Sophie G.', img: 'https://i.pravatar.cc/80?img=44' },
-              { quote: 'Downloaded yesterday. 5 stars.', name: 'Marcus D.', img: 'https://i.pravatar.cc/80?img=51' },
-              { quote: 'I\'ve tried so many of these apps and they all suck. this one doesn\'t.', name: 'Leila K.', img: 'https://i.pravatar.cc/80?img=32' },
-              { quote: 'the fact that it searches depop AND regular stores at the same time is so smart. found a vintage bomber for £22 that\'s identical to one i\'ve seen all over tiktok. obsessed', name: 'Amara J.', img: 'https://i.pravatar.cc/80?img=25' },
-              { quote: 'my girlfriend showed me this and now i use it more than she does. found three pieces last week i\'d been looking for for months. actually crazy', name: 'Daniel F.', img: 'https://i.pravatar.cc/80?img=60' },
-              { quote: 'used to spend hours on google trying to find stuff i saw online. now i spend like 30 seconds on stylefinder. the time i\'ve saved alone is worth the subscription', name: 'Nia B.', img: 'https://i.pravatar.cc/80?img=26' },
-              { quote: 'bro i found the exact shoes kanye was wearing in a paparazzi photo from 2022. for $60. this app is not normal', name: 'Kevin S.', img: 'https://i.pravatar.cc/80?img=68' },
+              { quote: 'i have a folder on my phone with like 200 outfit screenshots i\'ve never done anything with. working through them all now. send help', name: 'Tom W.', img: 'https://randomuser.me/api/portraits/men/32.jpg' },
+              { quote: 'ok why does this actually work', name: 'Leila K.', img: 'https://randomuser.me/api/portraits/women/44.jpg' },
+              { quote: 'ok this is actually insane. i screenshotted some girl\'s outfit on instagram like 6 months ago and never did anything about it. uploaded it to stylefinder and found basically the same jacket on depop for £19. downloading this was the best decision i\'ve made this week', name: 'Sophie G.', img: 'https://randomuser.me/api/portraits/women/68.jpg' },
+              { quote: 'Downloaded yesterday. 5 stars.', name: 'Marcus D.', img: 'https://randomuser.me/api/portraits/men/75.jpg' },
+              { quote: 'I\'ve tried so many of these apps and they all suck. this one doesn\'t.', name: 'Jade R.', img: 'https://randomuser.me/api/portraits/women/79.jpg' },
+              { quote: 'the fact that it searches depop AND regular stores at the same time is so smart. found a vintage bomber for £22 that\'s identical to one i\'ve seen all over tiktok. obsessed', name: 'Amara J.', img: 'https://randomuser.me/api/portraits/women/21.jpg' },
+              { quote: 'my girlfriend showed me this and now i use it more than she does. found three pieces last week i\'d been looking for for months. actually crazy', name: 'Daniel F.', img: 'https://randomuser.me/api/portraits/men/45.jpg' },
+              { quote: 'used to spend hours on google trying to find stuff i saw online. now i spend like 30 seconds on stylefinder. the time i\'ve saved alone is worth the subscription', name: 'Nia B.', img: 'https://randomuser.me/api/portraits/women/32.jpg' },
+              { quote: 'bro i found the exact shoes kanye was wearing in a paparazzi photo from 2022. for $60. this app is not normal', name: 'Kevin S.', img: 'https://randomuser.me/api/portraits/men/22.jpg' },
             ].map((r, i) => (
               <div key={i} className="break-inside-avoid bg-[#F7F7F2] rounded-[16px] p-6">
                 <div className="flex gap-0.5 mb-3">

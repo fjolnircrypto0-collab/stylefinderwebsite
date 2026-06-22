@@ -41,27 +41,29 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="pt-32 pb-20 px-6">
-        <div className="max-w-5xl mx-auto text-center">
+      <section className="pt-32 pb-8 px-6">
+        <div className="max-w-3xl mx-auto text-center">
+          {/* Social proof pill */}
           <div className="inline-flex items-center gap-3 bg-[#EFEFEA] rounded-full px-5 py-2.5 mb-10">
             <div className="flex -space-x-2">
-              <div className="w-7 h-7 rounded-full bg-[#C8DEFF] border-2 border-[#EFEFEA]" />
-              <div className="w-7 h-7 rounded-full bg-[#C8DEFF]/70 border-2 border-[#EFEFEA]" />
-              <div className="w-7 h-7 rounded-full bg-[#C8DEFF]/50 border-2 border-[#EFEFEA]" />
+              <img src="https://i.pravatar.cc/56?img=1" alt="" className="w-7 h-7 rounded-full border-2 border-[#EFEFEA] object-cover" />
+              <img src="https://i.pravatar.cc/56?img=12" alt="" className="w-7 h-7 rounded-full border-2 border-[#EFEFEA] object-cover" />
+              <img src="https://i.pravatar.cc/56?img=5" alt="" className="w-7 h-7 rounded-full border-2 border-[#EFEFEA] object-cover" />
             </div>
-            <span className="text-sm text-[#1C1C1E]/50 font-medium">Loved by thousands · ⭐ 4.9 rating</span>
+            <span className="text-sm text-[#1C1C1E]/50 font-medium">Loved by 2,000+ users · ⭐ 4.9 rating</span>
           </div>
 
-          <h1 className="text-5xl md:text-[5.5rem] font-black tracking-tight leading-[1.02] mb-6">
-            Meet StyleFinder<br />
-            <span className="text-[#1C1C1E]/30">Find any style</span><br />
-            <span className="text-[#1C1C1E]/30">with just a photo.</span>
+          <h1 className="text-[2.75rem] md:text-[5rem] font-black tracking-tight leading-[1.05] mb-6">
+            Meet <span className="inline-flex items-baseline"><span>Style</span><span className="font-light">Finder</span><span>.</span></span><br />
+            <span className="text-[#1C1C1E]/25">Find any clothing</span><br />
+            <span className="text-[#1C1C1E]/25">with just a photo.</span>
           </h1>
-          <p className="text-base md:text-lg text-[#1C1C1E]/45 max-w-xl mx-auto leading-relaxed mb-10">
-            Saw something you like on the street or on your feed? Upload a screenshot or take a photo, circle the item — and StyleFinder finds it instantly, plus similar styles for less.
+          <p className="text-base md:text-[1.1rem] text-[#1C1C1E]/40 max-w-lg mx-auto leading-relaxed mb-10">
+            Scan any clothing item with AI and find it across retailers and resale platforms at every price point. Same style, different price — so you always walk away with the best deal.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-20">
+          {/* CTA buttons */}
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a href="#download" className="inline-flex items-center justify-center gap-2 bg-[#1C1C1E] text-white font-bold px-7 py-3.5 rounded-[14px] text-sm hover:bg-[#1C1C1E]/90 transition" style={{ boxShadow: '0 0 24px rgba(200,222,255,0.5)' }}>
               <svg width="16" height="16" viewBox="0 0 384 512" fill="white"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
               Download on App Store
@@ -71,22 +73,17 @@ export default function Home() {
               Get it on Google Play
             </a>
           </div>
+        </div>
+      </section>
 
-          {/* Hero mockup — 3 phones */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto">
-            <div className="bg-[#EFEFEA] rounded-[24px] aspect-[9/16] flex flex-col items-center justify-center p-8">
-              <h3 className="text-2xl font-black text-center mb-2">Find Any<br />Clothing Item</h3>
-              <p className="text-xs text-[#1C1C1E]/40 text-center">Snap a photo from TikTok, Instagram, or anywhere.</p>
-            </div>
-            <div className="bg-[#EFEFEA] rounded-[24px] aspect-[9/16] flex flex-col items-center justify-center p-8">
-              <h3 className="text-2xl font-black text-center mb-2">Circle<br />What You Want</h3>
-              <p className="text-xs text-[#1C1C1E]/40 text-center">Draw around the exact item you&apos;re looking for.</p>
-            </div>
-            <div className="bg-[#EFEFEA] rounded-[24px] aspect-[9/16] flex flex-col items-center justify-center p-8">
-              <h3 className="text-2xl font-black text-center mb-2">Get Instant<br />Matches</h3>
-              <p className="text-xs text-[#1C1C1E]/40 text-center">Browse similar items from hundreds of stores.</p>
-            </div>
-          </div>
+      {/* Hero Image */}
+      <section className="px-6 pb-20">
+        <div className="max-w-4xl mx-auto">
+          <img
+            src="/hero-phones.png"
+            alt="StyleFinder app — scan a clothing item and get instant shopping results"
+            className="w-full rounded-[20px]"
+          />
         </div>
       </section>
 

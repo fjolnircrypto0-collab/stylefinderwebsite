@@ -5,9 +5,9 @@ import { useState } from 'react';
 const SUPABASE_URL = 'https://ffdgcicaykuatijjiitc.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_AzR7i_s0Pp3aXHUqQMPRHg_jxZO0LKS';
 
-function WaitlistForm({ variant = 'light' }: { variant?: 'light' | 'dark' }) {
+export default function Home() {
   const [email, setEmail] = useState('');
-  const [status, setStatus] = useState<'idle' | 'loading' | 'done' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'error'>('idle');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,49 +28,12 @@ function WaitlistForm({ variant = 'light' }: { variant?: 'light' | 'dark' }) {
         window.location.href = `/waitlist?code=${data.referral_code}`;
         return;
       }
-      setStatus('done');
+      setStatus('error');
     } catch {
       setStatus('error');
     }
   };
 
-  if (status === 'done') {
-    return <p className={`text-sm font-semibold ${variant === 'dark' ? 'text-white/70' : 'text-[#1C1C1E]/60'}`}>You&apos;re on the list! We&apos;ll let you know when we launch. 🎉</p>;
-  }
-
-  const isDark = variant === 'dark';
-
-  return (
-    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 w-full max-w-md">
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Enter your email"
-        required
-        className={`flex-1 px-5 py-3.5 rounded-[14px] text-sm outline-none ${
-          isDark
-            ? 'bg-white/10 text-white placeholder:text-white/30 border border-white/10 focus:border-white/30'
-            : 'bg-[#EFEFEA] text-[#1C1C1E] placeholder:text-[#1C1C1E]/30 border border-[#1C1C1E]/5 focus:border-[#1C1C1E]/20'
-        } transition`}
-      />
-      <button
-        type="submit"
-        disabled={status === 'loading'}
-        className={`px-6 py-3.5 rounded-[14px] text-sm font-bold transition whitespace-nowrap ${
-          isDark
-            ? 'bg-white text-[#1C1C1E] hover:bg-white/90'
-            : 'bg-[#1C1C1E] text-white hover:bg-[#1C1C1E]/90'
-        }`}
-        style={isDark ? {} : { boxShadow: '0 0 24px rgba(200,222,255,0.5)' }}
-      >
-        {status === 'loading' ? 'Joining...' : 'Get Notified'}
-      </button>
-    </form>
-  );
-}
-
-export default function Home() {
   return (
     <div className="bg-[#F7F7F2] text-[#1C1C1E] min-h-screen" style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif' }}>
 
@@ -83,34 +46,61 @@ export default function Home() {
             <span className="text-xl font-black">.</span>
           </a>
           <a href="#notify" className="inline-flex items-center gap-1.5 bg-[#1C1C1E] text-white text-xs font-semibold px-4 py-2 rounded-[10px] hover:bg-[#1C1C1E]/90 transition">
-            Get Notified
+            Join Waitlist
           </a>
         </div>
       </nav>
 
-      {/* Hero */}
-      <section className="pt-28 pb-8 px-6">
-        <div className="max-w-3xl mx-auto">
+      {/* Hero — Coming Soon + Waitlist */}
+      <section className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-12">
+        <div className="max-w-lg mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-[#1C1C1E] text-white rounded-full px-4 py-2 mb-8">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
             <span className="text-xs font-bold">Coming Soon</span>
-            <span className="text-xs text-white/50">· Join the waitlist</span>
           </div>
 
-          <h1 className="tracking-tight mb-5 text-[#1C1C1E]">
-            <span className="block text-[2.5rem] md:text-[4.2rem] font-black leading-[1.08]">Meet StyleFinder.</span>
-            <span className="block text-[2rem] md:text-[3.2rem] font-semibold leading-[1.15] text-[#1C1C1E]/70">Find any clothing</span>
-            <span className="block text-[2rem] md:text-[3.2rem] font-semibold leading-[1.15] text-[#1C1C1E]/70">with just a photo.</span>
-          </h1>
-          <p className="text-[15px] md:text-base text-[#1C1C1E]/50 max-w-md leading-[1.7] mb-8">
-            Scan any clothing item with AI and find it across retailers and resale platforms at every price point. Same style, different price — so you always walk away with the best deal.
+          <div className="flex items-baseline justify-center mb-6">
+            <span className="text-5xl md:text-7xl font-black tracking-tight">Style</span>
+            <span className="text-5xl md:text-7xl font-light tracking-tight">Finder</span>
+            <span className="text-5xl md:text-7xl font-black">.</span>
+          </div>
+
+          <p className="text-lg md:text-xl text-[#1C1C1E]/50 leading-relaxed mb-10">
+            Find any clothing with just a photo.<br />
+            <span className="text-[#1C1C1E]/35">Same style, different price.</span>
           </p>
 
-          <WaitlistForm />
+          <form id="notify" onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
+              required
+              className="flex-1 px-5 py-4 rounded-[14px] text-sm bg-[#EFEFEA] text-[#1C1C1E] placeholder:text-[#1C1C1E]/30 border border-[#1C1C1E]/5 focus:border-[#1C1C1E]/20 outline-none transition"
+            />
+            <button
+              type="submit"
+              disabled={status === 'loading'}
+              className="bg-[#1C1C1E] text-white font-bold px-7 py-4 rounded-[14px] text-sm hover:bg-[#1C1C1E]/90 transition whitespace-nowrap"
+              style={{ boxShadow: '0 0 24px rgba(200,222,255,0.5)' }}
+            >
+              {status === 'loading' ? 'Joining...' : 'Join the Waitlist'}
+            </button>
+          </form>
+
+          {status === 'error' && <p className="text-red-500 text-sm">Something went wrong. Try again.</p>}
+          <p className="text-[#1C1C1E]/20 text-xs">Join the waitlist to get early access. No spam.</p>
         </div>
       </section>
 
+      {/* Everything below — visible but secondary */}
+
       {/* Hero Image */}
-      <section className="px-6 pt-8 pb-20">
+      <section className="px-6 pb-20">
         <div className="max-w-3xl mx-auto">
           <div className="grid grid-cols-[1fr_auto_1fr] items-center mb-4">
             <h3 className="text-2xl md:text-3xl font-black tracking-tight text-center">Spot it.</h3>
@@ -121,8 +111,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Shop From Anywhere */}
+      {/* Meet StyleFinder */}
       <section className="px-6 py-24">
+        <div className="max-w-3xl mx-auto">
+          <h1 className="tracking-tight mb-5 text-[#1C1C1E]">
+            <span className="block text-[2.5rem] md:text-[4.2rem] font-black leading-[1.08]">Meet StyleFinder.</span>
+            <span className="block text-[2rem] md:text-[3.2rem] font-semibold leading-[1.15] text-[#1C1C1E]/70">Find any clothing</span>
+            <span className="block text-[2rem] md:text-[3.2rem] font-semibold leading-[1.15] text-[#1C1C1E]/70">with just a photo.</span>
+          </h1>
+          <p className="text-[15px] md:text-base text-[#1C1C1E]/50 max-w-md leading-[1.7]">
+            Scan any clothing item with AI and find it across retailers and resale platforms at every price point. Same style, different price — so you always walk away with the best deal.
+          </p>
+        </div>
+      </section>
+
+      {/* Shop From Anywhere */}
+      <section className="px-6 py-24 bg-white">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-4">Shop From Anywhere You See Style</h2>
           <p className="text-[#1C1C1E]/45 text-base leading-relaxed mb-8">
@@ -152,7 +156,7 @@ export default function Home() {
       </section>
 
       {/* Save Money */}
-      <section className="px-6 py-20 bg-white">
+      <section className="px-6 py-20">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-4">Save Money</h2>
           <p className="text-[#1C1C1E]/45 text-base leading-relaxed max-w-lg mx-auto mb-10">
@@ -162,8 +166,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why StyleFinder — Columns */}
-      <section id="features" className="px-6 py-24 bg-white">
+      {/* Why StyleFinder */}
+      <section className="px-6 py-24 bg-white">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-black tracking-tight text-center mb-16">Why StyleFinder?</h2>
           <div className="grid md:grid-cols-3 gap-6">
@@ -192,7 +196,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stop Waiting — Dark + Signup */}
+      {/* Stop Waiting — Dark */}
       <section className="px-6 py-12">
         <div className="max-w-3xl mx-auto bg-[#1C1C1E] rounded-[24px] p-10 md:p-14">
           <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight leading-tight mb-4">
@@ -201,12 +205,14 @@ export default function Home() {
           <p className="text-white/40 leading-relaxed mb-8">
             How many outfits are sitting in your camera roll right now that you never did anything about? StyleFinder is the push you needed. Spot it. Crop it. Shop it.
           </p>
-          <WaitlistForm variant="dark" />
+          <a href="#notify" className="inline-flex items-center justify-center bg-white text-[#1C1C1E] font-bold px-7 py-3.5 rounded-[14px] text-sm hover:bg-white/90 transition">
+            Join the Waitlist
+          </a>
         </div>
       </section>
 
       {/* Reviews */}
-      <section id="reviews" className="px-6 py-24 bg-white">
+      <section className="px-6 py-24 bg-white">
         <div className="max-w-4xl mx-auto">
           <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#1C1C1E]/25 mb-3">What Our Users Say</p>
           <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-16">The reviews speak for themselves.</h2>
@@ -231,22 +237,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section id="notify" className="px-6 py-24">
-        <div className="max-w-2xl mx-auto text-center">
-          <div className="flex items-baseline justify-center mb-4">
-            <span className="text-2xl font-black">Style</span>
-            <span className="text-2xl font-light">Finder</span>
-            <span className="text-2xl font-black">.</span>
-          </div>
-          <p className="text-[#1C1C1E]/50 text-sm mb-8">Be the first to know when we launch.</p>
-          <div className="flex justify-center">
-            <WaitlistForm />
-          </div>
-          <p className="text-[#1C1C1E]/15 text-[10px] mt-8 max-w-xs mx-auto">We&apos;ll only email you once — when the app is ready. No spam.</p>
         </div>
       </section>
 

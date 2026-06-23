@@ -54,7 +54,9 @@ export default function Home() {
       {/* Hero — Coming Soon */}
       <section className="flex flex-col items-center px-6 pt-32 pb-10">
         <div className="max-w-lg mx-auto text-center">
-          <p className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#1C1C1E]/30 mb-8">Coming Soon</p>
+          <div className="inline-block bg-[#1C1C1E] text-white rounded-full px-5 py-2.5 mb-8">
+            <span className="text-sm font-black tracking-wide">COMING SOON</span>
+          </div>
 
           <div className="flex items-baseline justify-center mb-5">
             <span className="text-5xl md:text-7xl font-black tracking-tight">Style</span>
@@ -62,11 +64,8 @@ export default function Home() {
             <span className="text-5xl md:text-7xl font-black">.</span>
           </div>
 
-          <p className="text-lg md:text-xl text-[#1C1C1E]/50 leading-relaxed mb-3">
-            See something you like? Photograph it.
-          </p>
-          <p className="text-base text-[#1C1C1E]/35 leading-relaxed mb-10">
-            StyleFinder scans any clothing item and finds it across hundreds of stores — new and secondhand — at every price point. Same style, different price.
+          <p className="text-lg md:text-xl text-[#1C1C1E]/60 leading-relaxed mb-10">
+            Join the waitlist for early access and exclusive rewards.
           </p>
 
           <form id="notify" onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-3">

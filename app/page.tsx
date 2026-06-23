@@ -58,15 +58,8 @@ export default function Home() {
             <span className="text-sm font-black tracking-wide">COMING SOON</span>
           </div>
 
-          <div className="flex items-baseline justify-center mb-5">
-            <span className="text-5xl md:text-7xl font-black tracking-tight">Style</span>
-            <span className="text-5xl md:text-7xl font-light tracking-tight">Finder</span>
-            <span className="text-5xl md:text-7xl font-black">.</span>
-          </div>
-
-          <p className="text-lg md:text-xl text-[#1C1C1E]/60 leading-relaxed mb-10">
-            Join the waitlist for early access and exclusive rewards.
-          </p>
+          <h1 className="text-3xl md:text-4xl font-black tracking-tight mb-4">Join the waitlist for early access and exclusive rewards.</h1>
+          <p className="text-base text-[#1C1C1E]/40 mb-10">Be the first to try StyleFinder when it launches.</p>
 
           <form id="notify" onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-3">
             <input
@@ -204,34 +197,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Reviews */}
-      <section className="px-6 py-24 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#1C1C1E]/25 mb-3">What Our Users Say</p>
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-16">The reviews speak for themselves.</h2>
-          <div className="columns-1 md:columns-2 gap-4 space-y-4">
-            {[
-              { quote: 'i have a folder on my phone with like 200 outfit screenshots i\'ve never done anything with. working through them all now. send help', name: 'Tom W.' },
-              { quote: 'ok why does this actually work', name: 'Leila K.' },
-              { quote: 'ok this is actually insane. i screenshotted some girl\'s outfit on instagram like 6 months ago and never did anything about it. uploaded it to stylefinder and found basically the same jacket on depop for £19. downloading this was the best decision i\'ve made this week', name: 'Sophie G.' },
-              { quote: 'Downloaded yesterday. 5 stars.', name: 'Marcus D.' },
-              { quote: 'I\'ve tried so many of these apps and they all suck. this one doesn\'t.', name: 'Jade R.' },
-              { quote: 'the fact that it searches depop AND regular stores at the same time is so smart. found a vintage bomber for £22 that\'s identical to one i\'ve seen all over tiktok. obsessed', name: 'Amara J.' },
-              { quote: 'my girlfriend showed me this and now i use it more than she does. found three pieces last week i\'d been looking for for months. actually crazy', name: 'Daniel F.' },
-              { quote: 'used to spend hours on google trying to find stuff i saw online. now i spend like 30 seconds on stylefinder. the time i\'ve saved alone is worth the subscription', name: 'Nia B.' },
-              { quote: 'bro i found the exact shoes kanye was wearing in a paparazzi photo from 2022. for $60. this app is not normal', name: 'Kevin S.' },
-            ].map((r, i) => (
-              <div key={i} className="break-inside-avoid bg-[#F7F7F2] rounded-[16px] p-6">
-                <div className="flex gap-0.5 mb-3">
-                  {[...Array(5)].map((_, j) => <span key={j} className="text-yellow-400 text-xs">★</span>)}
-                </div>
-                <p className="text-[#1C1C1E]/55 text-sm leading-relaxed mb-4">&quot;{r.quote}&quot;</p>
-                <p className="text-sm font-bold">— {r.name}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Footer */}
       <footer className="px-6 py-12 border-t border-[#1C1C1E]/5">

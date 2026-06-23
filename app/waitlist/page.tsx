@@ -71,10 +71,9 @@ function WaitlistDashboard() {
           <p className="text-6xl font-black tracking-tight">#{position.toLocaleString()}</p>
         </div>
 
-        {/* Share to move up */}
+        {/* Share */}
         <div className="bg-white rounded-[20px] p-8 mb-5">
-          <h2 className="text-xl font-black tracking-tight mb-1">Move up the line.</h2>
-          <p className="text-[#1C1C1E]/40 text-sm mb-6">Every friend who joins through your link moves you closer to the front — and unlocks rewards along the way.</p>
+          <h2 className="text-xl font-black tracking-tight mb-6">Share. Move up. Get rewarded.</h2>
 
           <div className="flex gap-2 mb-8">
             <div className="flex-1 bg-[#F7F7F2] rounded-[12px] px-4 py-3.5 text-sm text-[#1C1C1E]/50 truncate font-mono">
@@ -85,32 +84,29 @@ function WaitlistDashboard() {
             </button>
           </div>
 
-          {/* Rewards ladder */}
-          <div className="flex flex-col gap-2.5">
+          {/* Rewards */}
+          <div className="flex flex-col gap-3">
             {REWARDS.map((r) => {
               const unlocked = data.referral_count >= r.friends;
               return (
-                <div key={r.friends} className={`flex items-center justify-between rounded-[14px] px-5 py-4 transition ${unlocked ? 'bg-[#1C1C1E] text-white' : 'bg-[#F7F7F2]'}`}>
-                  <div>
-                    <p className="text-sm font-bold">{r.friends} friends</p>
-                    <p className={`text-xs ${unlocked ? 'text-white/50' : 'text-[#1C1C1E]/35'}`}>{r.label}</p>
-                  </div>
-                  {unlocked && <span className="text-[11px] font-bold bg-white/15 px-3 py-1 rounded-full">Unlocked</span>}
+                <div key={r.friends} className={`flex items-center rounded-[14px] px-5 py-4 transition ${unlocked ? 'bg-[#1C1C1E]' : 'bg-[#F7F7F2]'}`}>
+                  <span className={`text-sm font-bold min-w-[90px] ${unlocked ? 'text-white' : 'text-[#1C1C1E]'}`}>{r.friends} friends</span>
+                  <span className={`text-sm mx-3 ${unlocked ? 'text-white/30' : 'text-[#1C1C1E]/20'}`}>→</span>
+                  <span className={`text-sm font-black flex-1 ${unlocked ? 'text-white' : 'text-[#1C1C1E]'}`}>{r.label}</span>
+                  {unlocked && <span className="text-[10px] font-bold text-white/50 bg-white/10 px-2.5 py-1 rounded-full ml-2">Done</span>}
                 </div>
               );
             })}
           </div>
-        </div>
 
-        {/* Progress */}
-        <div className="bg-white rounded-[20px] p-8 text-center mb-10">
-          <p className="text-5xl font-black tracking-tight mb-1">{data.referral_count}</p>
-          <p className="text-[#1C1C1E]/35 text-sm">friends have joined</p>
-          {nextReward && (
-            <p className="text-[#1C1C1E]/50 text-sm mt-4">
-              <span className="font-bold text-[#1C1C1E]">{friendsToNext} more</span> until {nextReward.label}
-            </p>
-          )}
+          {/* Counter */}
+          <div className="mt-8 pt-6 border-t border-[#1C1C1E]/5 text-center">
+            <p className="text-4xl font-black tracking-tight">{data.referral_count}</p>
+            <p className="text-[#1C1C1E]/30 text-xs mt-1">friends joined</p>
+            {nextReward && (
+              <p className="text-sm text-[#1C1C1E]/50 mt-3"><span className="font-bold text-[#1C1C1E]">{friendsToNext} more</span> → {nextReward.label}</p>
+            )}
+          </div>
         </div>
 
         {/* App preview */}

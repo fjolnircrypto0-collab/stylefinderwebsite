@@ -8,10 +8,10 @@ const SUPABASE_URL = 'https://ffdgcicaykuatijjiitc.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_AzR7i_s0Pp3aXHUqQMPRHg_jxZO0LKS';
 
 const REWARDS = [
-  { friends: 3, label: 'Early Access', emoji: '🚀' },
-  { friends: 10, label: '3 Months of StyleFindr Pro', emoji: '⭐' },
-  { friends: 25, label: '1 Year of StyleFindr Pro', emoji: '💎' },
-  { friends: 50, label: 'Lifetime StyleFindr Pro', emoji: '🏆' },
+  { friends: 3, label: 'Early Access' },
+  { friends: 10, label: '3 Months Pro' },
+  { friends: 25, label: '1 Year Pro' },
+  { friends: 50, label: 'Lifetime Pro' },
 ];
 
 function WaitlistDashboard() {
@@ -38,17 +38,17 @@ function WaitlistDashboard() {
   if (!data) {
     return (
       <div className="min-h-screen bg-[#F7F7F2] flex items-center justify-center" style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif' }}>
-        <p className="text-[#1C1C1E]/40">Loading...</p>
+        <p className="text-[#1C1C1E]/30 text-sm">Loading...</p>
       </div>
     );
   }
 
   const nextReward = REWARDS.find(r => data.referral_count < r.friends);
   const friendsToNext = nextReward ? nextReward.friends - data.referral_count : 0;
+  const position = data.position ?? 2723;
 
   return (
     <div className="min-h-screen bg-[#F7F7F2] text-[#1C1C1E]" style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif' }}>
-      {/* Nav */}
       <nav className="flex items-center justify-between px-6 py-4 border-b border-black/5">
         <a href="/" className="flex items-baseline">
           <span className="text-xl font-black tracking-tight">Style</span>
@@ -58,48 +58,44 @@ function WaitlistDashboard() {
       </nav>
 
       <div className="max-w-lg mx-auto px-6 py-16">
-        {/* Confetti header */}
-        <div className="text-center mb-10">
-          <p className="text-4xl mb-4">🎉</p>
-          <h1 className="text-3xl md:text-4xl font-black tracking-tight mb-2">You&apos;re on the waitlist!</h1>
-          <p className="text-[#1C1C1E]/50">We&apos;ll let you know when StyleFinder launches.</p>
+        {/* Confirmed */}
+        <div className="text-center mb-12">
+          <p className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#1C1C1E]/30 mb-4">You&apos;re In</p>
+          <h1 className="text-3xl md:text-4xl font-black tracking-tight mb-3">Welcome to the waitlist.</h1>
+          <p className="text-[#1C1C1E]/45 text-sm">We&apos;ll email you the moment StyleFinder is ready to download.</p>
         </div>
 
-        {/* Position card */}
-        <div className="bg-white rounded-[20px] p-8 text-center mb-6">
-          <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#1C1C1E]/30 mb-2">Your Position</p>
-          <p className="text-6xl font-black tracking-tight text-[#1C1C1E]">#{(data.position ?? 2723).toLocaleString()}</p>
+        {/* Position */}
+        <div className="bg-white rounded-[20px] p-8 text-center mb-5">
+          <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#1C1C1E]/25 mb-3">Current Position</p>
+          <p className="text-6xl font-black tracking-tight">#{position.toLocaleString()}</p>
         </div>
 
-        {/* Referral section */}
-        <div className="bg-white rounded-[20px] p-8 mb-6">
-          <h2 className="text-xl font-black mb-2">Move Up The Waitlist 🚀</h2>
-          <p className="text-[#1C1C1E]/50 text-sm mb-6">Share your link with friends. When they sign up, you move closer to the front and unlock rewards.</p>
+        {/* Share to move up */}
+        <div className="bg-white rounded-[20px] p-8 mb-5">
+          <h2 className="text-xl font-black tracking-tight mb-1">Move up the line.</h2>
+          <p className="text-[#1C1C1E]/40 text-sm mb-6">Every friend who joins through your link moves you closer to the front — and unlocks rewards along the way.</p>
 
-          {/* Referral link */}
           <div className="flex gap-2 mb-8">
-            <div className="flex-1 bg-[#F7F7F2] rounded-[12px] px-4 py-3 text-sm text-[#1C1C1E]/60 truncate">
+            <div className="flex-1 bg-[#F7F7F2] rounded-[12px] px-4 py-3.5 text-sm text-[#1C1C1E]/50 truncate font-mono">
               stylefindr.app/invite/{data.referral_code}
             </div>
-            <button onClick={copyLink} className="bg-[#1C1C1E] text-white text-sm font-bold px-5 py-3 rounded-[12px] hover:bg-[#1C1C1E]/90 transition whitespace-nowrap">
-              {copied ? 'Copied!' : 'Copy'}
+            <button onClick={copyLink} className="bg-[#1C1C1E] text-white text-sm font-bold px-6 py-3.5 rounded-[12px] hover:bg-[#1C1C1E]/90 transition whitespace-nowrap" style={{ boxShadow: '0 0 20px rgba(200,222,255,0.4)' }}>
+              {copied ? 'Copied' : 'Copy Link'}
             </button>
           </div>
 
-          {/* Rewards */}
-          <div className="flex flex-col gap-3">
+          {/* Rewards ladder */}
+          <div className="flex flex-col gap-2.5">
             {REWARDS.map((r) => {
               const unlocked = data.referral_count >= r.friends;
               return (
-                <div key={r.friends} className={`flex items-center justify-between rounded-[14px] p-4 ${unlocked ? 'bg-[#1C1C1E] text-white' : 'bg-[#F7F7F2]'}`}>
-                  <div className="flex items-center gap-3">
-                    <span className="text-lg">{r.emoji}</span>
-                    <div>
-                      <p className={`text-sm font-bold ${unlocked ? 'text-white' : ''}`}>{r.friends} Friends</p>
-                      <p className={`text-xs ${unlocked ? 'text-white/60' : 'text-[#1C1C1E]/40'}`}>{r.label}</p>
-                    </div>
+                <div key={r.friends} className={`flex items-center justify-between rounded-[14px] px-5 py-4 transition ${unlocked ? 'bg-[#1C1C1E] text-white' : 'bg-[#F7F7F2]'}`}>
+                  <div>
+                    <p className="text-sm font-bold">{r.friends} friends</p>
+                    <p className={`text-xs ${unlocked ? 'text-white/50' : 'text-[#1C1C1E]/35'}`}>{r.label}</p>
                   </div>
-                  {unlocked && <span className="text-xs font-bold bg-white/20 px-3 py-1 rounded-full">Unlocked ✓</span>}
+                  {unlocked && <span className="text-[11px] font-bold bg-white/15 px-3 py-1 rounded-full">Unlocked</span>}
                 </div>
               );
             })}
@@ -107,17 +103,24 @@ function WaitlistDashboard() {
         </div>
 
         {/* Progress */}
-        <div className="bg-white rounded-[20px] p-8 text-center mb-8">
-          <p className="text-4xl font-black mb-1">{data.referral_count}</p>
-          <p className="text-[#1C1C1E]/40 text-sm">Friends Joined</p>
+        <div className="bg-white rounded-[20px] p-8 text-center mb-10">
+          <p className="text-5xl font-black tracking-tight mb-1">{data.referral_count}</p>
+          <p className="text-[#1C1C1E]/35 text-sm">friends have joined</p>
           {nextReward && (
-            <p className="text-[#1C1C1E]/50 text-sm mt-3">
-              Only <span className="font-bold text-[#1C1C1E]">{friendsToNext} more</span> until {nextReward.label}!
+            <p className="text-[#1C1C1E]/50 text-sm mt-4">
+              <span className="font-bold text-[#1C1C1E]">{friendsToNext} more</span> until {nextReward.label}
             </p>
           )}
         </div>
 
-        {/* Hero image */}
+        {/* App preview */}
+        <div className="text-center mb-4">
+          <div className="grid grid-cols-[1fr_auto_1fr] items-center mb-3">
+            <p className="text-lg font-black text-center">Spot it.</p>
+            <span className="text-lg text-[#1C1C1E] mx-3">→</span>
+            <p className="text-lg font-black text-center">Shop it.</p>
+          </div>
+        </div>
         <img src="/hero-phones.png" alt="StyleFinder" className="w-full rounded-[20px]" />
       </div>
     </div>

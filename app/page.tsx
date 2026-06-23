@@ -51,34 +51,30 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero — Coming Soon + Waitlist */}
-      <section className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-12">
+      {/* Hero — Coming Soon */}
+      <section className="flex flex-col items-center px-6 pt-32 pb-10">
         <div className="max-w-lg mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1C1C1E] text-white rounded-full px-4 py-2 mb-8">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-            </span>
-            <span className="text-xs font-bold">Coming Soon</span>
-          </div>
+          <p className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#1C1C1E]/30 mb-8">Coming Soon</p>
 
-          <div className="flex items-baseline justify-center mb-6">
+          <div className="flex items-baseline justify-center mb-5">
             <span className="text-5xl md:text-7xl font-black tracking-tight">Style</span>
             <span className="text-5xl md:text-7xl font-light tracking-tight">Finder</span>
             <span className="text-5xl md:text-7xl font-black">.</span>
           </div>
 
-          <p className="text-lg md:text-xl text-[#1C1C1E]/50 leading-relaxed mb-10">
-            Find any clothing with just a photo.<br />
-            <span className="text-[#1C1C1E]/35">Same style, different price.</span>
+          <p className="text-lg md:text-xl text-[#1C1C1E]/50 leading-relaxed mb-3">
+            See something you like? Photograph it.
+          </p>
+          <p className="text-base text-[#1C1C1E]/35 leading-relaxed mb-10">
+            StyleFinder scans any clothing item and finds it across hundreds of stores — new and secondhand — at every price point. Same style, different price.
           </p>
 
-          <form id="notify" onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4">
+          <form id="notify" onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-3">
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
+              placeholder="Your email address"
               required
               className="flex-1 px-5 py-4 rounded-[14px] text-sm bg-[#EFEFEA] text-[#1C1C1E] placeholder:text-[#1C1C1E]/30 border border-[#1C1C1E]/5 focus:border-[#1C1C1E]/20 outline-none transition"
             />
@@ -88,19 +84,17 @@ export default function Home() {
               className="bg-[#1C1C1E] text-white font-bold px-7 py-4 rounded-[14px] text-sm hover:bg-[#1C1C1E]/90 transition whitespace-nowrap"
               style={{ boxShadow: '0 0 24px rgba(200,222,255,0.5)' }}
             >
-              {status === 'loading' ? 'Joining...' : 'Join the Waitlist'}
+              {status === 'loading' ? 'Joining...' : 'Get Notified'}
             </button>
           </form>
 
           {status === 'error' && <p className="text-red-500 text-sm">Something went wrong. Try again.</p>}
-          <p className="text-[#1C1C1E]/20 text-xs">Join the waitlist to get early access. No spam.</p>
+          <p className="text-[#1C1C1E]/25 text-[11px]">We&apos;ll notify you once when the app is ready. That&apos;s it.</p>
         </div>
       </section>
 
-      {/* Everything below — visible but secondary */}
-
-      {/* Hero Image */}
-      <section className="px-6 pb-20">
+      {/* Spot it → Shop it + Image — tight to hero */}
+      <section className="px-6 pt-10 pb-20">
         <div className="max-w-3xl mx-auto">
           <div className="grid grid-cols-[1fr_auto_1fr] items-center mb-4">
             <h3 className="text-2xl md:text-3xl font-black tracking-tight text-center">Spot it.</h3>

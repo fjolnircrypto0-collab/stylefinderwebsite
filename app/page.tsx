@@ -1,4 +1,76 @@
+'use client';
 /* eslint-disable @next/next/no-img-element */
+import { useState } from 'react';
+
+const SUPABASE_URL = 'https://ffdgcicaykuatijjiitc.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_AzR7i_s0Pp3aXHUqQMPRHg_jxZO0LKS';
+
+function WaitlistForm({ variant = 'light' }: { variant?: 'light' | 'dark' }) {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'done' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    setStatus('loading');
+    try {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/waitlist`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          apikey: SUPABASE_KEY,
+          Authorization: `Bearer ${SUPABASE_KEY}`,
+          Prefer: 'return=minimal',
+        },
+        body: JSON.stringify({ email }),
+      });
+      if (res.ok || res.status === 409) {
+        setStatus('done');
+        setEmail('');
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
+  };
+
+  if (status === 'done') {
+    return <p className={`text-sm font-semibold ${variant === 'dark' ? 'text-white/70' : 'text-[#1C1C1E]/60'}`}>You&apos;re on the list! We&apos;ll let you know when we launch. 🎉</p>;
+  }
+
+  const isDark = variant === 'dark';
+
+  return (
+    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 w-full max-w-md">
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Enter your email"
+        required
+        className={`flex-1 px-5 py-3.5 rounded-[14px] text-sm outline-none ${
+          isDark
+            ? 'bg-white/10 text-white placeholder:text-white/30 border border-white/10 focus:border-white/30'
+            : 'bg-[#EFEFEA] text-[#1C1C1E] placeholder:text-[#1C1C1E]/30 border border-[#1C1C1E]/5 focus:border-[#1C1C1E]/20'
+        } transition`}
+      />
+      <button
+        type="submit"
+        disabled={status === 'loading'}
+        className={`px-6 py-3.5 rounded-[14px] text-sm font-bold transition whitespace-nowrap ${
+          isDark
+            ? 'bg-white text-[#1C1C1E] hover:bg-white/90'
+            : 'bg-[#1C1C1E] text-white hover:bg-[#1C1C1E]/90'
+        }`}
+        style={isDark ? {} : { boxShadow: '0 0 24px rgba(200,222,255,0.5)' }}
+      >
+        {status === 'loading' ? 'Joining...' : 'Get Notified'}
+      </button>
+    </form>
+  );
+}
+
 export default function Home() {
   return (
     <div className="bg-[#F7F7F2] text-[#1C1C1E] min-h-screen" style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif' }}>
@@ -11,9 +83,8 @@ export default function Home() {
             <span className="text-xl font-light tracking-tight">Finder</span>
             <span className="text-xl font-black">.</span>
           </a>
-          <a href="#download" className="inline-flex items-center gap-1.5 bg-[#1C1C1E] text-white text-xs font-semibold px-4 py-2 rounded-[10px] hover:bg-[#1C1C1E]/90 transition">
-            <svg width="14" height="14" viewBox="0 0 384 512" fill="white"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-            App Store
+          <a href="#notify" className="inline-flex items-center gap-1.5 bg-[#1C1C1E] text-white text-xs font-semibold px-4 py-2 rounded-[10px] hover:bg-[#1C1C1E]/90 transition">
+            Get Notified
           </a>
         </div>
       </nav>
@@ -21,13 +92,9 @@ export default function Home() {
       {/* Hero */}
       <section className="pt-28 pb-8 px-6">
         <div className="max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-3 bg-[#EFEFEA] rounded-full px-4 py-2 mb-8">
-            <div className="flex -space-x-2">
-              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="" className="w-7 h-7 rounded-full border-2 border-[#EFEFEA] object-cover" />
-              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="" className="w-7 h-7 rounded-full border-2 border-[#EFEFEA] object-cover" />
-              <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="" className="w-7 h-7 rounded-full border-2 border-[#EFEFEA] object-cover" />
-            </div>
-            <span className="text-sm text-[#1C1C1E]/50 font-medium">Loved by thousands · ⭐ 4.9 rating</span>
+          <div className="inline-flex items-center gap-2 bg-[#1C1C1E] text-white rounded-full px-4 py-2 mb-8">
+            <span className="text-xs font-bold">Coming Soon</span>
+            <span className="text-xs text-white/50">· Join the waitlist</span>
           </div>
 
           <h1 className="tracking-tight mb-5 text-[#1C1C1E]">
@@ -39,10 +106,7 @@ export default function Home() {
             Scan any clothing item with AI and find it across retailers and resale platforms at every price point. Same style, different price — so you always walk away with the best deal.
           </p>
 
-          <a href="#download" className="inline-flex items-center justify-center gap-2 bg-[#1C1C1E] text-white font-bold px-7 py-3.5 rounded-[14px] text-sm hover:bg-[#1C1C1E]/90 transition" style={{ boxShadow: '0 0 24px rgba(200,222,255,0.5)' }}>
-            <svg width="16" height="16" viewBox="0 0 384 512" fill="white"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-            Download on App Store
-          </a>
+          <WaitlistForm />
         </div>
       </section>
 
@@ -99,12 +163,10 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* Why StyleFinder — Columns */}
       <section id="features" className="px-6 py-24 bg-white">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-black tracking-tight text-center mb-16">Why StyleFinder?</h2>
-
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-[#F7F7F2] rounded-[20px] p-8 flex flex-col">
               <div className="w-12 h-12 rounded-[14px] bg-[#1C1C1E] flex items-center justify-center mb-5">
@@ -113,7 +175,6 @@ export default function Home() {
               <h3 className="text-lg font-black mb-2">Save Time</h3>
               <p className="text-[#1C1C1E]/45 text-sm leading-relaxed">No more spending hours scrolling through Google or jumping between apps. You see it, you crop it, StyleFinder finds it. Done in seconds.</p>
             </div>
-
             <div className="bg-[#F7F7F2] rounded-[20px] p-8 flex flex-col">
               <div className="w-12 h-12 rounded-[14px] bg-[#1C1C1E] flex items-center justify-center mb-5">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
@@ -121,7 +182,6 @@ export default function Home() {
               <h3 className="text-lg font-black mb-2">Save Money</h3>
               <p className="text-[#1C1C1E]/45 text-sm leading-relaxed">You&apos;ve been eyeing that jacket for weeks. StyleFinder finds you the same style for a fraction of the price. Same look. Different price. Every single time.</p>
             </div>
-
             <div className="bg-[#F7F7F2] rounded-[20px] p-8 flex flex-col">
               <div className="w-12 h-12 rounded-[14px] bg-[#1C1C1E] flex items-center justify-center mb-5">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
@@ -133,19 +193,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stop Waiting — Dark */}
+      {/* Stop Waiting — Dark + Signup */}
       <section className="px-6 py-12">
         <div className="max-w-3xl mx-auto bg-[#1C1C1E] rounded-[24px] p-10 md:p-14">
           <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight leading-tight mb-4">
             Stop Waiting. Start Wearing.
           </h2>
           <p className="text-white/40 leading-relaxed mb-8">
-            How many outfits are sitting in your camera roll right now that you never did anything about? StyleFinder is the push you needed. Spot it. Crop it. Shop it. The style upgrade you&apos;ve been putting off starts today.
+            How many outfits are sitting in your camera roll right now that you never did anything about? StyleFinder is the push you needed. Spot it. Crop it. Shop it.
           </p>
-          <a href="#download" className="inline-flex items-center justify-center gap-2 bg-white text-[#1C1C1E] font-bold px-7 py-3.5 rounded-[14px] text-sm hover:bg-white/90 transition">
-            <svg width="16" height="16" viewBox="0 0 384 512" fill="#1C1C1E"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-            Download on App Store
-          </a>
+          <WaitlistForm variant="dark" />
         </div>
       </section>
 
@@ -154,7 +211,6 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#1C1C1E]/25 mb-3">What Our Users Say</p>
           <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-16">The reviews speak for themselves.</h2>
-
           <div className="columns-1 md:columns-2 gap-4 space-y-4">
             {[
               { quote: 'i have a folder on my phone with like 200 outfit screenshots i\'ve never done anything with. working through them all now. send help', name: 'Tom W.' },
@@ -179,20 +235,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Download CTA */}
-      <section id="download" className="px-6 py-24">
+      {/* Final CTA */}
+      <section id="notify" className="px-6 py-24">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="flex items-baseline justify-center mb-6">
+          <div className="flex items-baseline justify-center mb-4">
             <span className="text-2xl font-black">Style</span>
             <span className="text-2xl font-light">Finder</span>
             <span className="text-2xl font-black">.</span>
           </div>
-
-          <a href="#" className="inline-block bg-[#1C1C1E] text-white font-bold px-10 py-4 rounded-[14px] text-base hover:bg-[#1C1C1E]/90 transition" style={{ boxShadow: '0 0 24px rgba(200,222,255,0.5)' }}>
-            Download StyleFinder
-          </a>
-
-          <p className="text-[#1C1C1E]/15 text-[10px] mt-8 max-w-xs mx-auto">By downloading, you agree to our Terms of Service and Privacy Policy.</p>
+          <p className="text-[#1C1C1E]/50 text-sm mb-8">Be the first to know when we launch.</p>
+          <div className="flex justify-center">
+            <WaitlistForm />
+          </div>
+          <p className="text-[#1C1C1E]/15 text-[10px] mt-8 max-w-xs mx-auto">We&apos;ll only email you once — when the app is ready. No spam.</p>
         </div>
       </section>
 
@@ -208,7 +263,6 @@ export default function Home() {
               </div>
               <p className="text-[#1C1C1E]/50 text-xs">Same style, different price.</p>
             </div>
-
             <div className="flex gap-14">
               <div>
                 <p className="font-bold text-[10px] uppercase tracking-widest text-[#1C1C1E]/50 mb-3">Legal</p>
@@ -225,7 +279,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-
           <div className="border-t border-[#1C1C1E]/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-[10px] text-[#1C1C1E]/40">&copy; 2026 StyleFindr. All rights reserved.</p>
             <div className="flex gap-5 text-sm text-[#1C1C1E]/50">

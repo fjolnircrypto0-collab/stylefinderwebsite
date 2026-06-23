@@ -68,7 +68,7 @@ function WaitlistDashboard() {
         {/* Position card */}
         <div className="bg-white rounded-[20px] p-8 text-center mb-6">
           <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#1C1C1E]/30 mb-2">Your Position</p>
-          <p className="text-6xl font-black tracking-tight text-[#1C1C1E]">#{data.position.toLocaleString()}</p>
+          <p className="text-6xl font-black tracking-tight text-[#1C1C1E]">#{(data.position ?? 2723).toLocaleString()}</p>
         </div>
 
         {/* Referral section */}

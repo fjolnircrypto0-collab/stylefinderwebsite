@@ -14,22 +14,21 @@ function WaitlistForm({ variant = 'light' }: { variant?: 'light' | 'dark' }) {
     if (!email) return;
     setStatus('loading');
     try {
-      const res = await fetch(`${SUPABASE_URL}/rest/v1/waitlist`, {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/join_waitlist_with_referral`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           apikey: SUPABASE_KEY,
           Authorization: `Bearer ${SUPABASE_KEY}`,
-          Prefer: 'return=minimal',
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ p_email: email, p_referrer_code: null }),
       });
-      if (res.ok || res.status === 409) {
-        setStatus('done');
-        setEmail('');
-      } else {
-        setStatus('error');
+      const data = await res.json();
+      if (data?.referral_code) {
+        window.location.href = `/waitlist?code=${data.referral_code}`;
+        return;
       }
+      setStatus('done');
     } catch {
       setStatus('error');
     }

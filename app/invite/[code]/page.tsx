@@ -12,11 +12,13 @@ export default function InvitePage() {
   const referrerCode = params.code as string;
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'done' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
     setStatus('loading');
+    setErrorMsg('');
     try {
       const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/join_waitlist_with_referral`, {
         method: 'POST',
@@ -27,14 +29,21 @@ export default function InvitePage() {
         },
         body: JSON.stringify({ p_email: email, p_referrer_code: referrerCode }),
       });
+      if (!res.ok) {
+        const err = await res.text();
+        throw new Error(err || `Server error (${res.status})`);
+      }
       const data = await res.json();
       if (data.referral_code) {
         router.push(`/waitlist?code=${data.referral_code}`);
+      } else if (data.id) {
+        router.push(`/waitlist?code=${data.referral_code || data.id}`);
       } else {
-        setStatus('error');
+        throw new Error('Unexpected response');
       }
-    } catch {
+    } catch (err) {
       setStatus('error');
+      setErrorMsg((err as Error).message || 'Something went wrong. Please try again.');
     }
   };
 
@@ -61,7 +70,7 @@ export default function InvitePage() {
           </p>
 
           {status === 'error' ? (
-            <p className="text-red-500 text-sm font-semibold">Something went wrong. Try again.</p>
+            <p className="text-red-500 text-sm font-semibold">{errorMsg || 'Something went wrong. Try again.'}</p>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
               <input

@@ -7,12 +7,14 @@ const SUPABASE_KEY = 'sb_publishable_AzR7i_s0Pp3aXHUqQMPRHg_jxZO0LKS';
 
 export default function Home() {
   const [email, setEmail] = useState('');
-  const [status, setStatus] = useState<'idle' | 'loading' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
     setStatus('loading');
+    setErrorMsg('');
     try {
       const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/join_waitlist_with_referral`, {
         method: 'POST',
@@ -23,14 +25,14 @@ export default function Home() {
         },
         body: JSON.stringify({ p_email: email, p_referrer_code: null }),
       });
-      const data = await res.json();
-      if (data?.referral_code) {
-        window.location.href = `/waitlist?code=${data.referral_code}`;
-        return;
+      if (!res.ok) {
+        const err = await res.text();
+        throw new Error(err || `Server error (${res.status})`);
       }
+      setStatus('success');
+    } catch (err) {
       setStatus('error');
-    } catch {
-      setStatus('error');
+      setErrorMsg((err as Error).message || 'Something went wrong. Please try again.');
     }
   };
 
@@ -40,52 +42,85 @@ export default function Home() {
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[#F7F7F2]/80 border-b border-black/5">
         <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
-          <a href="/" className="flex items-baseline">
-            <span className="text-xl font-black tracking-tight">Style</span>
-            <span className="text-xl font-light tracking-tight">Finder</span>
-            <span className="text-xl font-black">.</span>
-          </a>
+          <a href="/" className="text-xl font-black tracking-tight">StyleFinder.</a>
           <a href="#notify" className="inline-flex items-center gap-1.5 bg-[#1C1C1E] text-white text-xs font-semibold px-4 py-2 rounded-[10px] hover:bg-[#1C1C1E]/90 transition">
             Join Waitlist
           </a>
         </div>
       </nav>
 
-      {/* Hero — Coming Soon */}
+      {/* Hero */}
       <section className="flex flex-col items-center px-6 pt-32 pb-10">
         <div className="max-w-lg mx-auto text-center">
-          <div className="inline-block bg-[#1C1C1E] text-white rounded-full px-5 py-2.5 mb-8">
-            <span className="text-sm font-black tracking-wide">COMING SOON</span>
-          </div>
+          <p className="text-5xl md:text-6xl font-black tracking-tight text-[#1C1C1E] mb-6">Coming soon...</p>
 
-          <h1 className="text-3xl md:text-4xl font-black tracking-tight mb-4">Join the waitlist for early access and exclusive rewards.</h1>
-          <p className="text-base text-[#1C1C1E]/40 mb-10">Be the first to try StyleFinder when it launches.</p>
+          <h1 className="text-3xl md:text-4xl font-black tracking-tight mb-4">
+            Join the waitlist for early access.
+          </h1>
+          <p className="text-base text-[#1C1C1E]/40 mb-10">
+            Be among the first to use StyleFinder when it launches.
+          </p>
 
-          <form id="notify" onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-3">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Your email address"
-              required
-              className="flex-1 px-5 py-4 rounded-[14px] text-sm bg-[#EFEFEA] text-[#1C1C1E] placeholder:text-[#1C1C1E]/30 border border-[#1C1C1E]/5 focus:border-[#1C1C1E]/20 outline-none transition"
-            />
-            <button
-              type="submit"
-              disabled={status === 'loading'}
-              className="bg-[#1C1C1E] text-white font-bold px-7 py-4 rounded-[14px] text-sm hover:bg-[#1C1C1E]/90 transition whitespace-nowrap"
-              style={{ boxShadow: '0 0 24px rgba(200,222,255,0.5)' }}
-            >
-              {status === 'loading' ? 'Joining...' : 'Get Notified'}
-            </button>
-          </form>
+          {status === 'success' ? (
+            <div id="notify" className="max-w-md mx-auto">
+              <div
+                className="bg-[#1C1C1E] rounded-[24px] px-8 py-10 text-center relative overflow-hidden"
+                style={{ boxShadow: '0 8px 80px rgba(0,0,0,0.18), 0 0 0 1px rgba(255,255,255,0.06)' }}
+              >
+                {/* subtle glow top */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
-          {status === 'error' && <p className="text-red-500 text-sm">Something went wrong. Try again.</p>}
-          <p className="text-[#1C1C1E]/25 text-[11px]">We&apos;ll notify you once when the app is ready. That&apos;s it.</p>
+                <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-6 ring-1 ring-white/10">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+
+                <p className="text-white/50 text-xs font-bold uppercase tracking-widest mb-3">StyleFinder VIP</p>
+                <p className="text-white text-2xl font-black tracking-tight leading-tight mb-4">
+                  You&apos;re officially<br />on the waitlist!
+                </p>
+
+                <div className="bg-white/5 rounded-[12px] px-4 py-3 mb-5 border border-white/8">
+                  <p className="text-white/40 text-[11px] font-medium mb-0.5">Registered</p>
+                  <p className="text-white text-sm font-semibold truncate">{email}</p>
+                </div>
+
+                <div className="bg-gradient-to-r from-white/10 via-white/15 to-white/10 rounded-[12px] px-5 py-3.5 border border-white/15 flex items-center justify-center gap-2.5">
+                  <p className="text-white text-sm font-bold">Keep an eye on your inbox — you&apos;ll be one of the first to get access when we launch.</p>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div id="notify">
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-3">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Your email address"
+                  required
+                  className="flex-1 px-5 py-4 rounded-[14px] text-sm bg-[#EFEFEA] text-[#1C1C1E] placeholder:text-[#1C1C1E]/30 border border-[#1C1C1E]/5 focus:border-[#1C1C1E]/20 outline-none transition"
+                />
+                <button
+                  type="submit"
+                  disabled={status === 'loading'}
+                  className="bg-[#1C1C1E] text-white font-bold px-7 py-4 rounded-[14px] text-sm hover:bg-[#1C1C1E]/90 transition whitespace-nowrap disabled:opacity-60"
+                  style={{ boxShadow: '0 0 24px rgba(200,222,255,0.5)' }}
+                >
+                  {status === 'loading' ? 'Joining…' : 'Get Early Access'}
+                </button>
+              </form>
+              {status === 'error' && (
+                <p className="text-red-500 text-sm mb-2">{errorMsg || 'Something went wrong. Try again.'}</p>
+              )}
+              <p className="text-[#1C1C1E]/25 text-[11px]">No spam. Just a heads up when we launch.</p>
+            </div>
+          )}
         </div>
       </section>
 
-      {/* Spot it → Shop it + Image — tight to hero */}
+      {/* Spot it → Shop it */}
       <section className="px-6 pt-10 pb-20">
         <div className="max-w-3xl mx-auto">
           <div className="grid grid-cols-[1fr_auto_1fr] items-center mb-4">
@@ -182,7 +217,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stop Waiting — Dark */}
+      {/* Stop Waiting — Dark CTA */}
       <section className="px-6 py-12">
         <div className="max-w-3xl mx-auto bg-[#1C1C1E] rounded-[24px] p-10 md:p-14">
           <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight leading-tight mb-4">
@@ -197,17 +232,12 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* Footer */}
       <footer className="px-6 py-12 border-t border-[#1C1C1E]/5">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col md:flex-row items-start justify-between gap-10 mb-10">
             <div>
-              <div className="flex items-baseline mb-1">
-                <span className="text-lg font-black">Style</span>
-                <span className="text-lg font-light">Finder</span>
-                <span className="text-lg font-black">.</span>
-              </div>
+              <div className="text-lg font-black tracking-tight mb-1">StyleFinder.</div>
               <p className="text-[#1C1C1E]/50 text-xs">Same style, different price.</p>
             </div>
             <div className="flex gap-14">

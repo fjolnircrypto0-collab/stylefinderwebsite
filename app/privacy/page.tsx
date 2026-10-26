@@ -14,170 +14,120 @@ export default function Privacy() {
 
       <article className="max-w-3xl mx-auto px-6 pt-28 pb-20">
         <h1 className="text-3xl md:text-4xl font-black tracking-tight mb-2">Privacy Policy</h1>
-        <p className="text-sm text-[#1C1C1E]/40 mb-12">Effective Date: June 22, 2026 · Last Updated: June 22, 2026</p>
+        <p className="text-sm text-[#1C1C1E]/40 mb-12">Effective Date: October 26, 2026 · Last Updated: October 26, 2026</p>
 
         <div className="prose prose-sm max-w-none [&_h2]:text-xl [&_h2]:font-black [&_h2]:tracking-tight [&_h2]:mt-12 [&_h2]:mb-4 [&_h3]:text-base [&_h3]:font-bold [&_h3]:mt-8 [&_h3]:mb-3 [&_p]:text-[#1C1C1E]/60 [&_p]:leading-relaxed [&_p]:mb-4 [&_ul]:text-[#1C1C1E]/60 [&_ul]:leading-relaxed [&_li]:mb-1 [&_a]:text-[#1C1C1E] [&_a]:underline">
 
-          <h2>1. Introduction</h2>
-          <p>Welcome to StyleFindr (&quot;StyleFindr&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;).</p>
-          <p>StyleFindr is a clothing discovery application that allows users to upload or capture images of clothing items, identify those items using artificial intelligence, and discover visually similar products from retail and resale marketplaces.</p>
-          <p>StyleFindr is operated by an Icelandic sole trader.</p>
-          <p>Contact Email: <a href="mailto:support@stylefindr.app">support@stylefindr.app</a></p>
-          <p>StyleFindr is distributed through Apple&apos;s App Store and is currently available exclusively on iOS devices.</p>
-          <p>This Privacy Policy explains how we collect, use, disclose, process, store, and protect personal information.</p>
-          <p>By creating an account or using StyleFindr, you acknowledge that you have read and understood this Privacy Policy.</p>
+          <h2>1. Who We Are</h2>
+          <p>This Privacy Policy explains how StyleFinder (&quot;we&quot;, &quot;us&quot;) collects, uses, and shares information when you use the StyleFinder app and the stylefindr.app website. StyleFinder is operated by a sole trader in Iceland, who is the data controller for your personal data. You don&apos;t need to sign up to use StyleFinder: to run invites and sharing, the app creates an anonymous account for your device, with no name, email, or password. Signing in with Apple, Google, or your email is optional.</p>
 
-          <h2>2. Data Controller</h2>
-          <p>For purposes of the GDPR and applicable privacy laws, the data controller is:</p>
-          <p>StyleFindr<br />Iceland<br />Email: <a href="mailto:support@stylefindr.app">support@stylefindr.app</a></p>
-
-          <h2>3. Information We Collect</h2>
-
-          <h3>A. Account Information</h3>
-          <p>When you create an account, we collect:</p>
+          <h2>2. Summary</h2>
           <ul>
-            <li>Email address</li>
-            <li>Password credentials (stored securely through authentication providers)</li>
-            <li>Account identifiers</li>
+            <li>We use your photos only to find the clothes in them, and we don&apos;t keep them.</li>
+            <li>We don&apos;t sell your data, show ads, or track you across other apps and websites.</li>
+            <li>We don&apos;t use your photos to train AI models, and the AI providers we use don&apos;t either.</li>
+            <li>Most of what you tell us (your answers, favorites, and scan history) stays on your phone.</li>
+            <li>You can delete your data in the app at any time.</li>
           </ul>
 
-          <h3>B. Images and User Content</h3>
-          <p>We collect:</p>
+          <h2>3. Photos You Scan and AI</h2>
+          <p>When you scan, only the part of the photo you crop is sent to our servers. To find the clothes in it, we share that crop with these AI and search services:</p>
           <ul>
-            <li>Photos uploaded by users</li>
-            <li>Screenshots uploaded by users</li>
-            <li>Images captured within the app</li>
-            <li>Cropped selections created by users</li>
-            <li>Scan history</li>
-            <li>Search results history</li>
-            <li>Saved items</li>
-            <li>Favorites and closet information</li>
+            <li>OpenAI: identifies and describes each item of clothing.</li>
+            <li>Google Lens and Google Shopping (through our search provider, SearchApi or SerpApi): finds visually similar products. So Google can see it, the crop is stored in a private storage bucket and shared through a link that expires after 15 minutes. It is deleted as soon as the search for that item finishes.</li>
+            <li>Google Gemini (through OpenRouter): compares the crop with candidate products to rank the closest matches.</li>
+            <li>Marqo FashionCLIP: a fashion image model we run ourselves to compare how similar products look.</li>
           </ul>
-          <p>Images may incidentally contain faces, individuals, background objects, and personal belongings.</p>
-          <p>Users are responsible for ensuring they have the right to upload images they submit.</p>
+          <p>These providers process the crop only to return results to us. Under their terms for business customers they don&apos;t use it to train their models; some keep it for a short time (for example, OpenAI for up to 30 days) only to prevent abuse. We don&apos;t keep your photos after the scan, unless you choose to share a find (see section 4). The app asks for your permission before your first scan, and you can choose not to scan at all.</p>
 
-          <h3>C. Device and Technical Information</h3>
-          <p>We may collect:</p>
+          <h2>4. Other Information We Process</h2>
           <ul>
-            <li>Device model</li>
-            <li>Operating system version</li>
-            <li>App version</li>
-            <li>Language settings</li>
-            <li>IP address</li>
-            <li>Approximate location derived from IP</li>
-            <li>Usage analytics</li>
-            <li>Crash logs</li>
-            <li>Diagnostic information</li>
+            <li>Onboarding answers: your first name, style, fit, brands, budget, and similar answers you give during setup are stored on your device. Your height and weight never leave your device.</li>
           </ul>
-
-          <h3>D. Preferences</h3>
-          <p>We may collect:</p>
           <ul>
-            <li>Style preferences</li>
-            <li>Saved searches</li>
-            <li>Favorite brands</li>
-            <li>User customization settings</li>
+            <li>Favorites and recent scans: stored only on your device.</li>
           </ul>
-
-          <h3>E. Subscription Information</h3>
-          <p>We receive limited subscription status information from Apple and RevenueCat, including:</p>
           <ul>
-            <li>Subscription status</li>
-            <li>Product purchased</li>
-            <li>Renewal dates</li>
-            <li>Transaction identifiers</li>
+            <li>Email (optional): if you choose to &quot;Save your progress&quot;, we store your email together with your first name and style-profile answers (style, favorite brands, budget, and how you heard about us) so your profile is saved, and to send you occasional style tips and updates. Every email includes a way to unsubscribe.</li>
           </ul>
-          <p>We do not receive or store payment card details.</p>
-
-          <h2>4. How We Use Your Information</h2>
-          <p>We process personal data to:</p>
           <ul>
-            <li>Create and manage accounts</li>
-            <li>Authenticate users</li>
-            <li>Process clothing scans</li>
-            <li>Generate AI-powered clothing identification</li>
-            <li>Generate visual similarity matches</li>
-            <li>Search retail and resale marketplaces</li>
-            <li>Store scan history</li>
-            <li>Display saved items</li>
-            <li>Improve search accuracy</li>
-            <li>Prevent fraud and abuse</li>
-            <li>Provide customer support</li>
-            <li>Maintain platform security</li>
-            <li>Comply with legal obligations</li>
-            <li>Enforce our Terms</li>
+            <li>Sign-in (optional): if you sign in with Apple or Google, we receive your email address (Apple may give us a private relay address instead) and store it, along with your style-profile answers, with your account. We don&apos;t ask Apple or Google for anything else.</li>
+          </ul>
+          <ul>
+            <li>Anonymous account: a random ID the app creates so it can give you an invite link and know if you joined through a friend&apos;s invite. It is also attached to your subscription record at RevenueCat so we can confirm when an invited friend starts a subscription or free trial.</li>
+          </ul>
+          <ul>
+            <li>Invites: your invite code, which friends joined through it, and whether the App Store confirmed they started a subscription or free trial. Your friends see none of your information, and you see only counts and dates, not who they are. We also record anonymous counts of invite links being opened and shared, without IP addresses or device details.</li>
+          </ul>
+          <ul>
+            <li>Shared finds: only when you tap Share on a find, we publish that card (your scanned photo and the matched products) at an unlisted link so the people you send it to can see it. Anyone with the link can view it. It&apos;s removed after 180 days, or when you delete your data.</li>
+          </ul>
+          <ul>
+            <li>Subscription status: handled by Apple and RevenueCat using an anonymous ID. We never see or store your payment card details.</li>
+          </ul>
+          <ul>
+            <li>Scan records: for each scan we keep a technical record (time, country, how many items were found, how long it took, and errors), but never the photo. We keep these for up to 12 months to keep the service working well.</li>
+          </ul>
+          <ul>
+            <li>Search results: we cache product results for a scan (not the photo) for up to 24 hours to make repeat searches faster.</li>
           </ul>
 
-          <h2>5. AI Processing</h2>
-          <p>StyleFindr uses artificial intelligence and machine learning systems.</p>
-          <p>Uploaded images may be processed by:</p>
+          <h2>5. How We Use It</h2>
+          <p>We use this information only to provide and improve StyleFinder: finding the clothes in your scans and matching products and prices, personalising results to the preferences you gave, running invites and shared finds, managing your subscription, sending emails you agreed to, and keeping the service secure and working. We process it because it&apos;s needed to provide the service you ask for, or, for optional features like emails, because you agreed to it.</p>
+
+          <h2>6. Service Providers</h2>
+          <p>We share data only with these providers, and only as needed to run StyleFinder:</p>
           <ul>
-            <li>OpenAI GPT-4o Vision</li>
-            <li>Marqo / FashionCLIP</li>
-            <li>Remove.bg</li>
+            <li>OpenAI, Google (Lens, Shopping, and Gemini), SearchApi or SerpApi, and OpenRouter: see section 3</li>
+            <li>Supabase: our backend, database, and the short-lived storage for scan crops</li>
+            <li>Microsoft Azure: hosting for our scanning service</li>
+            <li>RevenueCat and Apple: subscriptions and payments</li>
+            <li>Apple and Google: optional sign-in</li>
+            <li>CJ Affiliate and partner retailers: product listings and links (they receive no personal data from us)</li>
           </ul>
-          <p>These services analyze images to detect clothing items, extract visual attributes, generate embeddings, compare visual similarity, and improve matching quality.</p>
-          <p>AI-generated results are probabilistic and may be inaccurate, incomplete, or incorrect. We do not guarantee identification accuracy.</p>
+          <p>Each provider handles data under its own terms and privacy policy and is bound to protect it. When you open a product, you leave StyleFinder and that retailer&apos;s privacy policy applies.</p>
 
-          <h2>6. Third-Party Service Providers</h2>
-          <p>We use third-party processors and service providers including:</p>
+          <h2>7. What We Don&apos;t Do</h2>
+          <p>We don&apos;t sell or rent your personal information. We don&apos;t show ads, use advertising identifiers, or track you across other companies&apos; apps and websites. We don&apos;t use third-party analytics.</p>
+
+          <h2>8. Affiliate Links</h2>
+          <p>Some product links are affiliate links. If you buy something after tapping one, we may earn a commission from the retailer at no extra cost to you. This doesn&apos;t change the price you pay or which results we show.</p>
+
+          <h2>9. Notifications</h2>
+          <p>If you allow notifications, we use them only to remind you before your free trial ends. You can turn them off at any time in your device Settings.</p>
+
+          <h2>10. How Long We Keep It</h2>
           <ul>
-            <li>OpenAI</li>
-            <li>Marqo</li>
-            <li>FashionCLIP</li>
-            <li>Remove.bg</li>
-            <li>SerpApi</li>
-            <li>Supabase</li>
-            <li>RevenueCat</li>
-            <li>Apple App Store</li>
-          </ul>
-          <p>Search results may contain information sourced from Google Shopping, Google Lens, eBay, Depop, Grailed, and other retailers and marketplaces.</p>
-          <p>Each third party operates under its own privacy practices.</p>
-
-          <h2>7. Legal Bases for Processing (GDPR)</h2>
-          <p>We process personal data under one or more of the following legal bases:</p>
-          <ul>
-            <li><strong>Contract:</strong> To provide StyleFindr services.</li>
-            <li><strong>Legitimate Interests:</strong> To improve security, functionality, and service quality.</li>
-            <li><strong>Consent:</strong> Where legally required.</li>
-            <li><strong>Legal Obligations:</strong> To comply with applicable laws and regulations.</li>
+            <li>Scan crops: deleted as soon as the search finishes (usually within minutes)</li>
+            <li>Scan records (no photos): up to 12 months</li>
+            <li>Search results: up to 24 hours</li>
+            <li>Shared finds: 180 days, or until you delete your data</li>
+            <li>Email and style profile: until you ask us to delete them or unsubscribe</li>
+            <li>Anonymous account and invites: until you delete your data</li>
+            <li>Everything on your device: until you delete it in the app or delete the app</li>
           </ul>
 
-          <h2>8. International Data Transfers</h2>
-          <p>Your information may be processed outside Iceland, the EEA, the UK, or Switzerland.</p>
-          <p>Because some providers may operate internationally, personal data may be transferred to countries with different privacy protections.</p>
-          <p>Where required, we rely upon Standard Contractual Clauses (SCCs), adequacy decisions, and other lawful transfer mechanisms recognized under GDPR.</p>
+          <h2>11. Deleting Your Data</h2>
+          <p>&quot;Delete Account Data&quot; in the app (Closet → Account) deletes your anonymous account and everything linked to it on our servers (invite code, invite history, and shared finds), plus everything stored on your device (onboarding answers, favorites, and recent scans). Deleting the app removes the data on your device. If you gave us your email, contact us and we&apos;ll delete it and the style-profile answers saved with it. To cancel a subscription, use your App Store settings.</p>
 
-          <h2>9. Data Retention</h2>
-          <p>We retain data only as long as necessary. Retention periods may depend on active account status, legal obligations, security requirements, and dispute resolution needs.</p>
-          <p>Upon account deletion, we will delete or anonymize personal information unless retention is legally required.</p>
+          <h2>12. Your Rights</h2>
+          <p>Depending on where you live (for example the EEA, UK, or California), you may have the right to access, correct, delete, or get a copy of your personal data, to object to or restrict how we use it, and to withdraw consent at any time. To make a request, contact us at <a href="mailto:support@stylefindr.app">support@stylefindr.app</a>. We&apos;ll respond within 30 days. If you&apos;re in the EEA or UK, you can also complain to your local data protection authority.</p>
 
-          <h2>10. Data Security</h2>
-          <p>We implement reasonable technical and organizational safeguards including encryption in transit, access controls, authentication protections, secure cloud infrastructure, and monitoring and logging.</p>
-          <p>No system can be guaranteed 100% secure.</p>
+          <h2>13. International Transfers</h2>
+          <p>Our providers may process data in countries outside your own, including the United States. Where the law requires, these transfers are protected by safeguards such as the European Commission&apos;s Standard Contractual Clauses.</p>
 
-          <h2>11. GDPR Rights</h2>
-          <p>Users in the EEA, UK, Switzerland, and Iceland may have rights to access, correct, delete, restrict processing, object to processing, data portability, and withdraw consent.</p>
-          <p>Requests may be sent to: <a href="mailto:support@stylefindr.app">support@stylefindr.app</a></p>
-          <p>You also have the right to lodge a complaint with your local supervisory authority.</p>
+          <h2>14. Security</h2>
+          <p>We protect your data with encryption in transit, access controls, and private storage, and we keep as little as we can. No system is perfectly secure, but we work to keep your information safe and will tell you if a breach affects you where the law requires.</p>
 
-          <h2>12. California Privacy Rights (CCPA/CPRA)</h2>
-          <p>California residents may have rights to know what information is collected, access personal information, request deletion, correct inaccurate information, obtain a portable copy, and limit use of sensitive personal information where applicable.</p>
-          <p>StyleFindr does not sell personal information. StyleFindr does not share personal information for cross-context behavioral advertising. No discrimination will occur for exercising privacy rights.</p>
-          <p>Requests may be submitted to: <a href="mailto:support@stylefindr.app">support@stylefindr.app</a></p>
+          <h2>15. Children</h2>
+          <p>StyleFinder is not directed at children under 13, and we don&apos;t knowingly collect personal data from them. If you believe a child has given us personal data, contact us and we&apos;ll delete it.</p>
 
-          <h2>13. Children&apos;s Privacy</h2>
-          <p>StyleFindr is intended for a general audience and is rated 4+ on the Apple App Store. If you are under the age at which you can legally consent to data processing in your jurisdiction, you should use the Services with the involvement or consent of a parent or legal guardian.</p>
-          <p>We do not knowingly collect personal information from children in violation of applicable law. If you believe that a child has provided personal information to us without appropriate consent, please contact us at <a href="mailto:support@stylefindr.app">support@stylefindr.app</a> and we will investigate and, where appropriate, delete the information.</p>
+          <h2>16. Changes</h2>
+          <p>We may update this policy. When we make material changes we&apos;ll update the effective date and, where appropriate, let you know in the app.</p>
 
-          <h2>14. Do Not Track</h2>
-          <p>Because there is no consistent industry standard, StyleFindr does not currently respond to browser-based Do Not Track signals.</p>
+          <h2>17. Contact</h2>
+          <p>Questions about this policy or your data: <a href="mailto:support@stylefindr.app">support@stylefindr.app</a></p>
 
-          <h2>15. Changes to This Policy</h2>
-          <p>We may update this Privacy Policy at any time. Material changes may be communicated through the app or other reasonable means. Continued use after updates constitutes acceptance of the revised Privacy Policy.</p>
-
-          <h2>16. Contact</h2>
-          <p>Questions regarding this Privacy Policy: <a href="mailto:support@stylefindr.app">support@stylefindr.app</a></p>
         </div>
       </article>
     </div>

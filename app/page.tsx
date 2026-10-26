@@ -251,6 +251,7 @@ export default function Home() {
               <div>
                 <p className="font-bold text-[10px] uppercase tracking-widest text-[#1C1C1E]/50 mb-3">Company</p>
                 <div className="flex flex-col gap-2.5 text-sm text-[#1C1C1E]/60">
+                  <a href="/support" className="hover:text-[#1C1C1E] transition">Support</a>
                   <a href="mailto:support@stylefindr.app" className="hover:text-[#1C1C1E] transition">support@stylefindr.app</a>
                 </div>
               </div>

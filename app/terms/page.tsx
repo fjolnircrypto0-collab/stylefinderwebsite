@@ -14,101 +14,68 @@ export default function Terms() {
 
       <article className="max-w-3xl mx-auto px-6 pt-28 pb-20">
         <h1 className="text-3xl md:text-4xl font-black tracking-tight mb-2">Terms &amp; Conditions</h1>
-        <p className="text-sm text-[#1C1C1E]/40 mb-12">Effective Date: June 22, 2026</p>
+        <p className="text-sm text-[#1C1C1E]/40 mb-12">Effective Date: October 26, 2026 · Last Updated: October 26, 2026</p>
 
         <div className="prose prose-sm max-w-none [&_h2]:text-xl [&_h2]:font-black [&_h2]:tracking-tight [&_h2]:mt-12 [&_h2]:mb-4 [&_h3]:text-base [&_h3]:font-bold [&_h3]:mt-8 [&_h3]:mb-3 [&_p]:text-[#1C1C1E]/60 [&_p]:leading-relaxed [&_p]:mb-4 [&_ul]:text-[#1C1C1E]/60 [&_ul]:leading-relaxed [&_li]:mb-1 [&_a]:text-[#1C1C1E] [&_a]:underline">
 
-          <h2>1. Acceptance of Terms</h2>
-          <p>These Terms &amp; Conditions govern your access to and use of StyleFindr.</p>
-          <p>By creating an account, downloading, accessing, or using StyleFindr, you agree to these Terms. If you do not agree, do not use the application.</p>
+          <h2>1. Agreement</h2>
+          <p>These Terms of Use (&quot;Terms&quot;) are an agreement between you and StyleFinder (&quot;we&quot;, &quot;us&quot;), operated by a sole trader in Iceland. They apply to the StyleFinder app and the stylefindr.app website. By using StyleFinder you agree to these Terms and to our Privacy Policy (<a href="/privacy">stylefindr.app/privacy</a>). If you don&apos;t agree, please don&apos;t use StyleFinder.</p>
 
-          <h2>2. Eligibility</h2>
-          <p>You must have the legal capacity to enter into these Terms or, where permitted by applicable law, use the Services with the consent and supervision of a parent or legal guardian.</p>
-          <p>You must comply with applicable laws.</p>
+          <h2>2. Who Can Use StyleFinder</h2>
+          <p>You must be at least 13 years old. If you&apos;re under the age of majority where you live, you may only use StyleFinder with the permission of a parent or guardian, who agrees to these Terms for you.</p>
 
-          <h2>3. Service Description</h2>
-          <p>StyleFindr is a clothing discovery platform. Users may upload photographs, upload screenshots, circle clothing items, search for visually similar products, and view retail and secondhand results.</p>
-          <p>StyleFindr does not sell clothing. StyleFindr is not a retailer. StyleFindr is not a marketplace. StyleFindr does not facilitate purchases.</p>
+          <h2>3. What StyleFinder Does</h2>
+          <p>StyleFinder lets you photograph or upload an outfit, choose the items you want, and find matching or similar products from third-party retailers and resale marketplaces. You can save favourites to your Closet, share finds, and invite friends. StyleFinder is not a store: we don&apos;t sell, ship, or return any products.</p>
 
-          <h2>4. No Guarantee of Accuracy</h2>
-          <p>Results are generated through artificial intelligence and automated search systems.</p>
-          <p>StyleFindr does not guarantee accurate identification, exact product matches, price accuracy, availability, authenticity, quality, or merchant reliability.</p>
-          <p>Results are provided for informational and discovery purposes only.</p>
+          <h2>4. AI Results</h2>
+          <p>Results are produced by artificial intelligence and automated search, using the AI services described in our Privacy Policy. They can be wrong: an item may be misidentified, a match may not be exact, and prices, sizes, and availability can change or differ from what the retailer shows. Always check the details on the retailer&apos;s site before you buy. Results are for discovery only and are not professional advice.</p>
 
-          <h2>5. Third-Party Retailers</h2>
-          <p>Products displayed may originate from third parties including eBay, Depop, Grailed, Google Shopping sources, and independent retailers.</p>
-          <p>Any purchase occurs solely between you and the retailer.</p>
-          <p>StyleFindr is not responsible for orders, returns, refunds, shipping, product quality, counterfeit goods, or retailer conduct.</p>
+          <h2>5. Your Photos</h2>
+          <p>You keep ownership of the photos you scan. You give us a limited licence to process them (including sending the part you crop to our AI and search providers, as described in our Privacy Policy) only to give you results, and, if you choose to share a find, to show that card at its link. You confirm you have the right to use each photo, and you won&apos;t scan photos of other people in a way that breaks their privacy or the law.</p>
 
-          <h2>6. User Content</h2>
-          <p>You retain ownership of content you upload.</p>
-          <p>By uploading content, you grant StyleFindr a worldwide, non-exclusive license to process images, analyze content, generate search results, improve functionality, and store and display content within your account.</p>
-          <p>You represent that you have rights necessary to upload submitted content.</p>
+          <h2>6. Sharing and Invites</h2>
+          <p>When you share a find, anyone with its link can see that card (your scanned photo and the matched products) until it expires after 180 days or you delete your data. Invites let friends join through your link; they don&apos;t come with rewards, payments, or credits, and you may not spam people or offer anything in exchange for invites. We may remove shared finds or invite links that break these Terms.</p>
 
-          <h2>7. Prohibited Uses</h2>
-          <p>You may not:</p>
-          <ul>
-            <li>Violate laws</li>
-            <li>Infringe intellectual property rights</li>
-            <li>Upload illegal content</li>
-            <li>Interfere with service operation</li>
-            <li>Reverse engineer the service</li>
-            <li>Circumvent security measures</li>
-            <li>Scrape or harvest data</li>
-            <li>Use automated bots without authorization</li>
-          </ul>
-          <p>We may suspend or terminate accounts violating these Terms.</p>
+          <h2>7. Retailers and Affiliate Links</h2>
+          <p>Products link to third-party retailers and marketplaces. Any purchase is solely between you and that seller under their own terms; we aren&apos;t responsible for their products, prices, delivery, returns, or conduct. Some links are affiliate links: we may earn a commission when you buy, at no extra cost to you. It doesn&apos;t change what you pay or which results we show.</p>
 
-          <h2>8. Subscriptions</h2>
-          <p>StyleFindr offers subscriptions including:</p>
-          <ul>
-            <li>Monthly: USD $11.99</li>
-            <li>Annual: USD $49.99</li>
-          </ul>
-          <p>A 3-day free trial may be offered. Pricing may change in the future.</p>
+          <h2>8. Acceptable Use</h2>
+          <p>Don&apos;t use StyleFinder to break the law or anyone&apos;s rights; upload unlawful, harmful, or explicit material; harass others; interfere with or overload the service; reverse engineer, copy, or resell the app or its results; scrape data or use bots; or get around security, usage limits, or payment.</p>
 
-          <h2>9. Billing</h2>
-          <p>Billing is processed through Apple App Store and RevenueCat. Subscriptions renew automatically unless cancelled at least 24 hours before renewal. Apple manages payment processing. StyleFindr does not process payment cards.</p>
+          <h2>9. Subscriptions and Free Trial</h2>
+          <p>StyleFinder Premium is an auto-renewing monthly or annual subscription. The price and length are shown in the app before you buy. A free trial may be offered to eligible new subscribers; when it is, its length is shown before you start it, and unless you cancel at least 24 hours before it ends, your paid subscription begins and you&apos;re charged for the plan you chose. Not every offer includes a free trial.</p>
+          <p>Payment is charged to your Apple ID when you confirm the purchase (or when the free trial ends). Your subscription renews automatically at the same price and length unless you cancel at least 24 hours before the end of the current period. You can manage or cancel it at any time in your App Store account settings; cancelling stops future renewals, and you keep Premium until the end of the period you&apos;ve paid for. If a price changes, Apple will tell you in advance as its rules require.</p>
 
           <h2>10. Refunds</h2>
-          <p>Refunds are governed by Apple&apos;s policies. Refund requests must be submitted through Apple. StyleFindr does not issue refunds directly.</p>
+          <p>Purchases are processed by Apple, and refunds are handled by Apple under its policies. You can request one at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>; we can&apos;t issue refunds ourselves.</p>
 
-          <h2>11. Intellectual Property</h2>
-          <p>The StyleFindr application, software, branding, design, databases, and content are protected by intellectual property laws. Except as expressly permitted, no rights are granted.</p>
+          <h2>11. Our Rights</h2>
+          <p>The StyleFinder app, name, logo, design, and content belong to us or our licensors and are protected by law. We give you a personal, non-transferable, revocable licence to use the app on Apple devices you own or control, as allowed by Apple&apos;s Usage Rules. If you send us feedback or ideas, we may use them without owing you anything.</p>
 
-          <h2>12. Disclaimer of Warranties</h2>
-          <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, STYLEFINDR IS PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE.&quot;</p>
-          <p>WE DISCLAIM ALL WARRANTIES, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, ACCURACY, AND AVAILABILITY.</p>
-          <p>WE DO NOT WARRANT UNINTERRUPTED OR ERROR-FREE OPERATION.</p>
+          <h2>12. Changes to the Service</h2>
+          <p>We keep improving StyleFinder, so features may change, be added, or be removed. We may also pause the service for maintenance. We&apos;ll try to tell you in advance about changes that significantly affect your subscription.</p>
 
-          <h2>13. Limitation of Liability</h2>
-          <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, STYLEFINDR SHALL NOT BE LIABLE FOR LOST PROFITS, LOST DATA, LOST BUSINESS, INDIRECT DAMAGES, INCIDENTAL DAMAGES, CONSEQUENTIAL DAMAGES, THIRD-PARTY CONDUCT, RETAILER TRANSACTIONS, OR AI ERRORS.</p>
-          <p>OUR TOTAL LIABILITY SHALL NOT EXCEED THE GREATER OF: (A) AMOUNTS PAID TO STYLEFINDR DURING THE PRECEDING TWELVE MONTHS; OR (B) USD $100.</p>
+          <h2>13. Disclaimer</h2>
+          <p>To the extent the law allows, StyleFinder is provided &quot;as is&quot; and &quot;as available&quot;, without warranties of any kind, including that results will be accurate or that the service will always be available or error-free. Nothing in these Terms limits rights you have under mandatory consumer law.</p>
 
-          <h2>14. Indemnification</h2>
-          <p>You agree to indemnify and hold StyleFindr harmless from claims arising from your content, your misuse of the service, violation of these Terms, or violation of third-party rights.</p>
+          <h2>14. Limitation of Liability</h2>
+          <p>To the extent the law allows, we&apos;re not liable for indirect, incidental, special, or consequential losses, lost profits or data, purchases you make from retailers, or decisions based on AI results. Our total liability to you is limited to the greater of what you paid us in the previous 12 months or USD 100. This doesn&apos;t limit liability that can&apos;t be limited by law.</p>
 
-          <h2>15. Termination</h2>
-          <p>We may suspend or terminate access at any time for security concerns, legal requirements, violations of Terms, or abuse of the platform. Termination does not affect accrued rights or obligations.</p>
+          <h2>15. Ending Your Use</h2>
+          <p>You can stop using StyleFinder at any time and delete your data in the app (Closet → Account → Delete Account Data). Deleting the app or your data doesn&apos;t cancel a subscription; do that in your App Store settings. We may suspend or end your access if you break these Terms, for security reasons, or if the law requires it.</p>
 
-          <h2>16. Apple-Specific Terms</h2>
-          <p>Apple is not responsible for the application, maintenance, support services, warranty claims, or product claims. Apple and its subsidiaries are third-party beneficiaries of these Terms and may enforce them. Use of the application must comply with App Store terms and policies.</p>
+          <h2>16. Apple Terms</h2>
+          <p>These Terms are between you and us, not Apple, and we, not Apple, are responsible for the app and its content. Apple has no obligation to provide maintenance or support for the app. If the app fails to conform to any applicable warranty, you may notify Apple, and Apple will refund the purchase price (if any); to the extent the law allows, Apple has no other warranty obligation. We, not Apple, are responsible for any claims relating to the app, including product liability, legal or regulatory compliance, consumer protection, and intellectual property claims. You confirm you&apos;re not in a country subject to a U.S. Government embargo or on a U.S. Government list of prohibited or restricted parties. You must also follow any third-party terms that apply when you use the app. Apple and its subsidiaries are third-party beneficiaries of these Terms and may enforce them against you.</p>
 
           <h2>17. Governing Law</h2>
-          <p>These Terms are governed by the laws of Iceland, excluding conflict-of-law rules.</p>
+          <p>These Terms are governed by the laws of Iceland, without regard to conflict-of-law rules, and disputes go to the courts of Iceland. If you&apos;re a consumer, you keep the protection of the mandatory laws of the country where you live and can bring claims there.</p>
 
-          <h2>18. Dispute Resolution</h2>
-          <p>Before initiating legal proceedings, users agree to attempt good-faith resolution by contacting: <a href="mailto:support@stylefindr.app">support@stylefindr.app</a></p>
-          <p>Nothing in these Terms limits mandatory consumer rights available under applicable law.</p>
+          <h2>18. Changes to These Terms</h2>
+          <p>We may update these Terms. When we make material changes we&apos;ll update the date above and, where appropriate, let you know in the app. If you keep using StyleFinder after changes take effect, the updated Terms apply.</p>
 
-          <h2>19. Severability</h2>
-          <p>If any provision is found unenforceable, the remaining provisions remain in effect.</p>
+          <h2>19. Contact</h2>
+          <p>Questions about these Terms: <a href="mailto:support@stylefindr.app">support@stylefindr.app</a></p>
 
-          <h2>20. Entire Agreement</h2>
-          <p>These Terms, together with the Privacy Policy, constitute the entire agreement between you and StyleFindr.</p>
-
-          <h2>21. Contact</h2>
-          <p><a href="mailto:support@stylefindr.app">support@stylefindr.app</a></p>
         </div>
       </article>
     </div>

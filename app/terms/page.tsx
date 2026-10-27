@@ -74,7 +74,7 @@ export default function Terms() {
           <p>We may update these Terms. When we make material changes we&apos;ll update the date above and, where appropriate, let you know in the app. If you keep using StyleFinder after changes take effect, the updated Terms apply.</p>
 
           <h2>19. Contact</h2>
-          <p>Questions about these Terms: <a href="mailto:support@stylefindr.app">support@stylefindr.app</a></p>
+          <p>Questions about these Terms: <a href="mailto:hello@stylefindr.app">hello@stylefindr.app</a></p>
 
         </div>
       </article>

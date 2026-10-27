@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: "Get help with StyleFinder: contact us, manage your subscription, restore purchases, and delete your data.",
 };
 
-const EMAIL = "support@stylefindr.app";
+const EMAIL = "hello@stylefindr.app";
 
 // Questions people ask most, with the exact steps in the app.
 const FAQ: { q: string; a: React.ReactNode }[] = [

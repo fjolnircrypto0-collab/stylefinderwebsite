@@ -111,7 +111,7 @@ export default function Privacy() {
           <p>&quot;Delete Account Data&quot; in the app (Closet → Account) deletes your anonymous account and everything linked to it on our servers (invite code, invite history, and shared finds), plus everything stored on your device (onboarding answers, favorites, and recent scans). Deleting the app removes the data on your device. If you gave us your email, contact us and we&apos;ll delete it and the style-profile answers saved with it. To cancel a subscription, use your App Store settings.</p>
 
           <h2>12. Your Rights</h2>
-          <p>Depending on where you live (for example the EEA, UK, or California), you may have the right to access, correct, delete, or get a copy of your personal data, to object to or restrict how we use it, and to withdraw consent at any time. To make a request, contact us at <a href="mailto:support@stylefindr.app">support@stylefindr.app</a>. We&apos;ll respond within 30 days. If you&apos;re in the EEA or UK, you can also complain to your local data protection authority.</p>
+          <p>Depending on where you live (for example the EEA, UK, or California), you may have the right to access, correct, delete, or get a copy of your personal data, to object to or restrict how we use it, and to withdraw consent at any time. To make a request, contact us at <a href="mailto:hello@stylefindr.app">hello@stylefindr.app</a>. We&apos;ll respond within 30 days. If you&apos;re in the EEA or UK, you can also complain to your local data protection authority.</p>
 
           <h2>13. International Transfers</h2>
           <p>Our providers may process data in countries outside your own, including the United States. Where the law requires, these transfers are protected by safeguards such as the European Commission&apos;s Standard Contractual Clauses.</p>
@@ -126,7 +126,7 @@ export default function Privacy() {
           <p>We may update this policy. When we make material changes we&apos;ll update the effective date and, where appropriate, let you know in the app.</p>
 
           <h2>17. Contact</h2>
-          <p>Questions about this policy or your data: <a href="mailto:support@stylefindr.app">support@stylefindr.app</a></p>
+          <p>Questions about this policy or your data: <a href="mailto:hello@stylefindr.app">hello@stylefindr.app</a></p>
 
         </div>
       </article>

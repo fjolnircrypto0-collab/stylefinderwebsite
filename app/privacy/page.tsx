@@ -39,6 +39,7 @@ export default function Privacy() {
             <li>Anonymous ID: a random ID the app creates to link your subscription status and shared finds.</li>
             <li>Shared finds: when you tap Share, that card (your scanned photo and matched products) is available at a private link for 180 days, or until you delete your data.</li>
             <li>Subscriptions: handled by Apple and RevenueCat. We never see your payment details.</li>
+            <li>Cancellation feedback: if you cancel, we ask why. We keep the reason you pick and what you write (with your plan and language, not your name) to improve StyleFinder.</li>
             <li>Technical records: basic, photo-free records of scans (such as time and errors) to keep the service working.</li>
           </ul>
 

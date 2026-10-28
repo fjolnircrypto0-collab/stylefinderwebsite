@@ -14,40 +14,40 @@ export default function Terms() {
 
       <article className="max-w-3xl mx-auto px-6 pt-28 pb-20">
         <h1 className="text-3xl md:text-4xl font-black tracking-tight mb-2">Terms &amp; Conditions</h1>
-        <p className="text-sm text-[#1C1C1E]/40 mb-12">Effective Date: October 26, 2026 · Last Updated: October 26, 2026</p>
+        <p className="text-sm text-[#1C1C1E]/40 mb-12">Effective Date: October 28, 2026 · Last Updated: October 28, 2026</p>
 
         <div className="prose prose-sm max-w-none [&_h2]:text-xl [&_h2]:font-black [&_h2]:tracking-tight [&_h2]:mt-12 [&_h2]:mb-4 [&_h3]:text-base [&_h3]:font-bold [&_h3]:mt-8 [&_h3]:mb-3 [&_p]:text-[#1C1C1E]/60 [&_p]:leading-relaxed [&_p]:mb-4 [&_ul]:text-[#1C1C1E]/60 [&_ul]:leading-relaxed [&_li]:mb-1 [&_a]:text-[#1C1C1E] [&_a]:underline">
 
           <h2>1. Agreement</h2>
-          <p>These Terms of Use (&quot;Terms&quot;) are an agreement between you and StyleFinder (&quot;we&quot;, &quot;us&quot;), operated by a sole trader in Iceland. They apply to the StyleFinder app and the stylefindr.app website. By using StyleFinder you agree to these Terms and to our Privacy Policy (<a href="/privacy">stylefindr.app/privacy</a>). If you don&apos;t agree, please don&apos;t use StyleFinder.</p>
+          <p>These Terms of Use (&quot;Terms&quot;) are an agreement between you and StyleFinder (&quot;we&quot;, &quot;us&quot;), operated by a sole trader in Iceland. They apply to the StyleFinder app and the stylefindr.app website. By using StyleFinder you agree to these Terms and to our Privacy Policy (stylefindr.app/privacy). If you don&apos;t agree, please don&apos;t use StyleFinder.</p>
 
           <h2>2. Who Can Use StyleFinder</h2>
-          <p>You must be at least 13 years old. If you&apos;re under the age of majority where you live, you may only use StyleFinder with the permission of a parent or guardian, who agrees to these Terms for you.</p>
+          <p>StyleFinder is for everyone. If you&apos;re under the age of majority where you live, please use StyleFinder with the permission of a parent or guardian, who agrees to these Terms for you.</p>
 
           <h2>3. What StyleFinder Does</h2>
-          <p>StyleFinder lets you photograph or upload an outfit, choose the items you want, and find matching or similar products from third-party retailers and resale marketplaces. You can save favourites to your Closet, share finds, and invite friends. StyleFinder is not a store: we don&apos;t sell, ship, or return any products.</p>
+          <p>StyleFinder lets you photograph or upload an outfit, choose the items you want, and find matching or similar products from third-party retailers and resale marketplaces. You can save favourites to your Closet and share finds with friends. StyleFinder is not a store: we don&apos;t sell, ship, or return any products.</p>
 
           <h2>4. AI Results</h2>
-          <p>Results are produced by artificial intelligence and automated search, using the AI services described in our Privacy Policy. They can be wrong: an item may be misidentified, a match may not be exact, and prices, sizes, and availability can change or differ from what the retailer shows. Always check the details on the retailer&apos;s site before you buy. Results are for discovery only and are not professional advice.</p>
+          <p>Results are produced by artificial intelligence and automated search. They can be wrong: an item may be misidentified, a match may not be exact, and prices, sizes, and availability can change or differ from what the retailer shows. Always check the details on the retailer&apos;s site before you buy. Results are for discovery only and are not professional advice.</p>
 
           <h2>5. Your Photos</h2>
-          <p>You keep ownership of the photos you scan. You give us a limited licence to process them (including sending the part you crop to our AI and search providers, as described in our Privacy Policy) only to give you results, and, if you choose to share a find, to show that card at its link. You confirm you have the right to use each photo, and you won&apos;t scan photos of other people in a way that breaks their privacy or the law.</p>
+          <p>You keep ownership of the photos you scan. You give us a limited licence to process them (including sending the part you crop to the AI and search services we use) only to give you results, and, if you choose to share a find, to show that card at its link. You confirm you have the right to use each photo, and you won&apos;t scan photos of other people in a way that breaks their privacy or the law.</p>
 
-          <h2>6. Sharing and Invites</h2>
-          <p>When you share a find, anyone with its link can see that card (your scanned photo and the matched products) until it expires after 180 days or you delete your data. Invites let friends join through your link; they don&apos;t come with rewards, payments, or credits, and you may not spam people or offer anything in exchange for invites. We may remove shared finds or invite links that break these Terms.</p>
+          <h2>6. Sharing</h2>
+          <p>When you share a find, anyone with its link can see that card (your scanned photo and the matched products) until it expires after 180 days or you delete your data. Don&apos;t use sharing to spam people. We may remove shared finds that break these Terms.</p>
 
-          <h2>7. Retailers and Affiliate Links</h2>
-          <p>Products link to third-party retailers and marketplaces. Any purchase is solely between you and that seller under their own terms; we aren&apos;t responsible for their products, prices, delivery, returns, or conduct. Some links are affiliate links: we may earn a commission when you buy, at no extra cost to you. It doesn&apos;t change what you pay or which results we show.</p>
+          <h2>7. Retailers</h2>
+          <p>Products link to third-party retailers and marketplaces. Any purchase is solely between you and that seller under their own terms; we aren&apos;t responsible for their products, prices, delivery, returns, or conduct.</p>
 
           <h2>8. Acceptable Use</h2>
           <p>Don&apos;t use StyleFinder to break the law or anyone&apos;s rights; upload unlawful, harmful, or explicit material; harass others; interfere with or overload the service; reverse engineer, copy, or resell the app or its results; scrape data or use bots; or get around security, usage limits, or payment.</p>
 
           <h2>9. Subscriptions and Free Trial</h2>
-          <p>StyleFinder Premium is an auto-renewing monthly or annual subscription. The price and length are shown in the app before you buy. A free trial may be offered to eligible new subscribers; when it is, its length is shown before you start it, and unless you cancel at least 24 hours before it ends, your paid subscription begins and you&apos;re charged for the plan you chose. Not every offer includes a free trial.</p>
+          <p>StyleFinder Premium is an auto-renewing weekly or monthly subscription. The price and length are shown in the app before you buy. A free trial may be offered to eligible new subscribers; when it is, its length is shown before you start it, and unless you cancel at least 24 hours before it ends, your paid subscription begins and you&apos;re charged for the plan you chose. Not every offer includes a free trial. Premium includes up to 200 finds (item searches) each calendar month; unused finds don&apos;t carry over, and the count resets on the 1st of each month.</p>
           <p>Payment is charged to your Apple ID when you confirm the purchase (or when the free trial ends). Your subscription renews automatically at the same price and length unless you cancel at least 24 hours before the end of the current period. You can manage or cancel it at any time in your App Store account settings; cancelling stops future renewals, and you keep Premium until the end of the period you&apos;ve paid for. If a price changes, Apple will tell you in advance as its rules require.</p>
 
           <h2>10. Refunds</h2>
-          <p>Purchases are processed by Apple, and refunds are handled by Apple under its policies. You can request one at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>; we can&apos;t issue refunds ourselves.</p>
+          <p>Purchases are processed by Apple, and refunds are handled by Apple under its policies. You can request one at reportaproblem.apple.com; we can&apos;t issue refunds ourselves.</p>
 
           <h2>11. Our Rights</h2>
           <p>The StyleFinder app, name, logo, design, and content belong to us or our licensors and are protected by law. We give you a personal, non-transferable, revocable licence to use the app on Apple devices you own or control, as allowed by Apple&apos;s Usage Rules. If you send us feedback or ideas, we may use them without owing you anything.</p>

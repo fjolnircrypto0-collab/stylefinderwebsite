@@ -32,6 +32,12 @@ const FAQ: { q: string; a: React.ReactNode }[] = [
     ),
   },
   {
+    q: "Is there a limit on how much I can find?",
+    a: (
+      <p>Premium includes <strong>200 finds every month</strong>, where a find is one item you choose to search for. That&apos;s more than 50 full outfits. You can see how many you have left in the app under <strong>Closet</strong> → <strong>Account</strong> → <strong>Manage Subscription</strong>, and the count resets on the 1st of each month.</p>
+    ),
+  },
+  {
     q: "How do I cancel my subscription?",
     a: (
       <>
@@ -73,7 +79,7 @@ const FAQ: { q: string; a: React.ReactNode }[] = [
   {
     q: "How do I delete my data?",
     a: (
-      <p>In the app, open your <strong>Closet</strong>, then <strong>Account</strong> → <strong>Delete Account Data</strong>. This deletes your account and everything linked to it on our servers, plus everything stored on your phone. If you gave us your email, write to us and we&apos;ll delete that too.</p>
+      <p>In the app, open your <strong>Closet</strong>, then <strong>Account</strong> → <strong>Delete Account Data</strong>. This deletes your account and everything linked to it on our servers, plus everything stored on your phone.</p>
     ),
   },
 ];

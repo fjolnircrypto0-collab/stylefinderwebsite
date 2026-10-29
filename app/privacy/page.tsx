@@ -31,7 +31,7 @@ export default function Privacy() {
           </ul>
 
           <h2>3. Photos You Scan</h2>
-          <p>When you scan, only the part of the photo you crop is sent to our servers and to the third-party AI and image-search services we use to identify the clothes and find matching products. They process it only to return results to us and don&apos;t use it to train their models. We don&apos;t keep your photos after the scan, unless you choose to share a find.</p>
+          <p>When you scan, only the part of the photo you crop is sent to our servers and to these third-party AI and image-search services, which identify the clothes and find matching products: • OpenAI (GPT models): finds and describes the clothes in your photo. • Google: Google Lens image search (through SearchApi) finds matching products, and Gemini (through OpenRouter) compares the matches with your photo. They process it only to return results to us and don&apos;t use it to train their models. We ask for your permission before your first scan. We don&apos;t keep your photos after the scan, unless you choose to share a find.</p>
 
           <h2>4. Information We Process</h2>
           <ul>
@@ -47,7 +47,7 @@ export default function Privacy() {
           <p>Only to provide and improve StyleFinder: finding the clothes in your scans, matching products and prices, personalising results, running shared finds, managing your subscription, and keeping the service secure.</p>
 
           <h2>6. Who We Share It With</h2>
-          <p>Only with service providers that help us run StyleFinder (hosting and storage, AI and image search, and subscriptions through Apple and RevenueCat), and only as needed to provide the service. They&apos;re bound to protect your data and may not use it for anything else. Some may process data outside your country, with legal safeguards where required. We don&apos;t sell or rent your personal information, show ads, or use third-party analytics. When you open a product, you leave StyleFinder and that retailer&apos;s privacy policy applies.</p>
+          <p>Only with service providers that help us run StyleFinder, and only as needed to provide the service: Hetzner (our scan servers, in Finland), Supabase (database and storage), OpenAI, Google, SearchApi and OpenRouter (AI and image search, see section 3), and Apple and RevenueCat (subscriptions). They&apos;re bound to protect your data and may not use it for anything else. Some may process data outside your country, with legal safeguards where required. We don&apos;t sell or rent your personal information, show ads, or use third-party analytics. When you open a product, you leave StyleFinder and that retailer&apos;s privacy policy applies.</p>
 
           <h2>7. Notifications</h2>
           <p>If you allow notifications, we use them only to remind you before your free trial ends. You can turn them off in your device Settings.</p>

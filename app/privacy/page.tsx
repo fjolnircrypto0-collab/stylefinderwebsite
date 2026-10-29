@@ -31,7 +31,7 @@ export default function Privacy() {
           </ul>
 
           <h2>3. Photos You Scan</h2>
-          <p>When you scan, only the part of the photo you crop is sent to our servers and to these third-party AI and image-search services, which identify the clothes and find matching products: • OpenAI (GPT models): finds and describes the clothes in your photo. • Google: Google Lens image search (through SearchApi) finds matching products, and Gemini (through OpenRouter) compares the matches with your photo. They process it only to return results to us and don&apos;t use it to train their models. We ask for your permission before your first scan. We don&apos;t keep your photos after the scan, unless you choose to share a find.</p>
+          <p>When you scan, only the part of the photo you crop is sent to our servers and to these third-party AI and image-search services, which identify the clothes and find matching products: • OpenAI (GPT models): finds and describes the clothes in your photo. • Google: Google Lens image search (through SearchApi) finds matching products, and Gemini (through OpenRouter) compares the matches with your photo. They process it only to return results to us and don&apos;t use it to train their models. We don&apos;t keep your photos after the scan, unless you choose to share a find.</p>
 
           <h2>4. Information We Process</h2>
           <ul>

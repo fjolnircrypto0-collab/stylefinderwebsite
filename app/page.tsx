@@ -1,41 +1,18 @@
 'use client';
 /* eslint-disable @next/next/no-img-element */
-import { useState } from 'react';
+// The app on the App Store. A plain link (not a store badge script) so it
+// also works from TikTok's and Instagram's in-app browsers.
+const APP_STORE_URL = 'https://apps.apple.com/app/id6787039372';
 
-const SUPABASE_URL = 'https://ffdgcicaykuatijjiitc.supabase.co';
-const SUPABASE_KEY = 'sb_publishable_AzR7i_s0Pp3aXHUqQMPRHg_jxZO0LKS';
+function AppleLogo({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 384 512" fill="currentColor" aria-hidden="true">
+      <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z" />
+    </svg>
+  );
+}
 
 export default function Home() {
-  const [email, setEmail] = useState('');
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [errorMsg, setErrorMsg] = useState('');
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    setStatus('loading');
-    setErrorMsg('');
-    try {
-      const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/join_waitlist_with_referral`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          apikey: SUPABASE_KEY,
-          Authorization: `Bearer ${SUPABASE_KEY}`,
-        },
-        body: JSON.stringify({ p_email: email, p_referrer_code: null }),
-      });
-      if (!res.ok) {
-        const err = await res.text();
-        throw new Error(err || `Server error (${res.status})`);
-      }
-      setStatus('success');
-    } catch (err) {
-      setStatus('error');
-      setErrorMsg((err as Error).message || 'Something went wrong. Please try again.');
-    }
-  };
-
   return (
     <div className="bg-[#F7F7F2] text-[#1C1C1E] min-h-screen" style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif' }}>
 
@@ -43,80 +20,37 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[#F7F7F2]/80 border-b border-black/5">
         <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
           <a href="/" className="text-xl font-black tracking-tight">StyleFinder.</a>
-          <a href="#notify" className="inline-flex items-center gap-1.5 bg-[#1C1C1E] text-white text-xs font-semibold px-4 py-2 rounded-[10px] hover:bg-[#1C1C1E]/90 transition">
-            Join Waitlist
+          <a href={APP_STORE_URL} className="inline-flex items-center gap-1.5 bg-[#1C1C1E] text-white text-xs font-semibold px-4 py-2 rounded-[10px] hover:bg-[#1C1C1E]/90 transition">
+            <AppleLogo className="w-3 h-3.5" /> Download
           </a>
         </div>
       </nav>
 
-      {/* Hero */}
+      {/* Hero: the app is out. One big button to the App Store. */}
       <section className="flex flex-col items-center px-6 pt-32 pb-10">
-        <div className="max-w-lg mx-auto text-center">
-          <p className="text-5xl md:text-6xl font-black tracking-tight text-[#1C1C1E] mb-6">Coming soon...</p>
-
-          <h1 className="text-3xl md:text-4xl font-black tracking-tight mb-4">
-            Join the waitlist for early access.
+        <div className="w-full max-w-lg mx-auto text-center">
+          <p className="inline-block text-xs font-bold uppercase tracking-widest text-[#1C1C1E]/50 bg-[#1C1C1E]/5 rounded-full px-4 py-1.5 mb-6">
+            Out now on iPhone
+          </p>
+          <h1 className="text-5xl md:text-6xl font-black tracking-tight text-[#1C1C1E] leading-[1.05] mb-5">
+            Find any outfit<br />from a photo.
           </h1>
-          <p className="text-base text-[#1C1C1E]/40 mb-10">
-            Be among the first to use StyleFinder when it launches.
+          <p className="text-base md:text-lg text-[#1C1C1E]/50 mb-10">
+            Scan clothes you see anywhere and find them across shops and resale, at every price.
           </p>
 
-          {status === 'success' ? (
-            <div id="notify" className="max-w-md mx-auto">
-              <div
-                className="bg-[#1C1C1E] rounded-[24px] px-8 py-10 text-center relative overflow-hidden"
-                style={{ boxShadow: '0 8px 80px rgba(0,0,0,0.18), 0 0 0 1px rgba(255,255,255,0.06)' }}
-              >
-                {/* subtle glow top */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-
-                <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-6 ring-1 ring-white/10">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                </div>
-
-                <p className="text-white/50 text-xs font-bold uppercase tracking-widest mb-3">StyleFinder VIP</p>
-                <p className="text-white text-2xl font-black tracking-tight leading-tight mb-4">
-                  You&apos;re officially<br />on the waitlist!
-                </p>
-
-                <div className="bg-white/5 rounded-[12px] px-4 py-3 mb-5 border border-white/8">
-                  <p className="text-white/40 text-[11px] font-medium mb-0.5">Registered</p>
-                  <p className="text-white text-sm font-semibold truncate">{email}</p>
-                </div>
-
-                <div className="bg-gradient-to-r from-white/10 via-white/15 to-white/10 rounded-[12px] px-5 py-3.5 border border-white/15 flex items-center justify-center gap-2.5">
-                  <p className="text-white text-sm font-bold">Keep an eye on your inbox — you&apos;ll be one of the first to get access when we launch.</p>
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div id="notify">
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-3">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Your email address"
-                  required
-                  className="flex-1 px-5 py-4 rounded-[14px] text-sm bg-[#EFEFEA] text-[#1C1C1E] placeholder:text-[#1C1C1E]/30 border border-[#1C1C1E]/5 focus:border-[#1C1C1E]/20 outline-none transition"
-                />
-                <button
-                  type="submit"
-                  disabled={status === 'loading'}
-                  className="bg-[#1C1C1E] text-white font-bold px-7 py-4 rounded-[14px] text-sm hover:bg-[#1C1C1E]/90 transition whitespace-nowrap disabled:opacity-60"
-                  style={{ boxShadow: '0 0 24px rgba(200,222,255,0.5)' }}
-                >
-                  {status === 'loading' ? 'Joining…' : 'Get Early Access'}
-                </button>
-              </form>
-              {status === 'error' && (
-                <p className="text-red-500 text-sm mb-2">{errorMsg || 'Something went wrong. Try again.'}</p>
-              )}
-              <p className="text-[#1C1C1E]/25 text-[11px]">No spam. Just a heads up when we launch.</p>
-            </div>
-          )}
+          <a
+            href={APP_STORE_URL}
+            className="flex items-center justify-center gap-4 w-full bg-[#1C1C1E] text-white rounded-[22px] px-8 py-6 hover:bg-[#1C1C1E]/90 active:scale-[0.98] transition"
+            style={{ boxShadow: '0 12px 40px rgba(0,0,0,0.25), 0 0 32px rgba(200,222,255,0.6)' }}
+          >
+            <AppleLogo className="w-9 h-11 shrink-0" />
+            <span className="text-left leading-tight">
+              <span className="block text-sm font-medium text-white/70">Download on the</span>
+              <span className="block text-3xl font-black tracking-tight">App Store</span>
+            </span>
+          </a>
+          <p className="text-[#1C1C1E]/40 text-sm mt-4">Free to try. For iPhone.</p>
         </div>
       </section>
 
@@ -226,8 +160,8 @@ export default function Home() {
           <p className="text-white/40 leading-relaxed mb-8">
             How many outfits are sitting in your camera roll right now that you never did anything about? StyleFinder is the push you needed. Spot it. Crop it. Shop it.
           </p>
-          <a href="#notify" className="inline-flex items-center justify-center bg-white text-[#1C1C1E] font-bold px-7 py-3.5 rounded-[14px] text-sm hover:bg-white/90 transition">
-            Join the Waitlist
+          <a href={APP_STORE_URL} className="inline-flex items-center justify-center gap-3 bg-white text-[#1C1C1E] font-bold px-7 py-4 rounded-[16px] text-base hover:bg-white/90 transition">
+            <AppleLogo className="w-5 h-6" /> Download on the App Store
           </a>
         </div>
       </section>

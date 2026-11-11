@@ -34,7 +34,7 @@ export default function Home() {
       <section className="flex flex-col items-center px-6 pt-28 pb-10">
         <div className="w-full max-w-xl mx-auto text-center">
           <p className="text-7xl md:text-9xl font-black tracking-tighter leading-none text-[#1C1C1E] mb-8">
-            Out now.
+            Out now!
           </p>
 
           <a href={APP_STORE_URL} className="flex items-center gap-4 text-left mx-auto w-fit mb-8">

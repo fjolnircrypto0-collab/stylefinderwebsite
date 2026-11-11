@@ -59,31 +59,17 @@ export default function Home() {
           </a>
         </div>
 
-        {/* The first three App Store screenshots: swipe on a phone, side by side on a computer. */}
-        <div className="w-[calc(100%+3rem)] -mx-6 mt-12 md:w-full md:max-w-4xl md:mx-auto">
-          <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory px-6 md:px-0 pb-4 [scrollbar-width:none]">
-            {[1, 2, 3].map((n) => (
-              <a key={n} href={APP_STORE_URL} className="snap-center shrink-0 w-[68%] sm:w-[45%] md:w-auto">
-                <img
-                  src={`/appstore/shot-${n}.jpg`}
-                  alt={`StyleFinder on the App Store, screenshot ${n}`}
-                  className="w-full rounded-[24px] shadow-[0_12px_40px_rgba(0,0,0,0.15)]"
-                />
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Spot it → Shop it */}
-      <section className="px-6 pt-10 pb-20">
-        <div className="max-w-3xl mx-auto">
-          <div className="grid grid-cols-[1fr_auto_1fr] items-center mb-4">
-            <h3 className="text-2xl md:text-3xl font-black tracking-tight text-center">Spot it.</h3>
-            <span className="text-2xl md:text-3xl text-[#1C1C1E] mx-4">→</span>
-            <h3 className="text-2xl md:text-3xl font-black tracking-tight text-center">Shop it.</h3>
-          </div>
-          <img src="/hero-phones.png" alt="StyleFinder app" className="w-full rounded-[20px]" />
+        {/* The first three App Store screenshots, all three side by side on any screen. */}
+        <div className="w-full max-w-xl mx-auto mt-10 grid grid-cols-3 gap-2.5 md:gap-5">
+          {[1, 2, 3].map((n) => (
+            <a key={n} href={APP_STORE_URL}>
+              <img
+                src={`/appstore/shot-${n}.jpg`}
+                alt={`StyleFinder on the App Store, screenshot ${n}`}
+                className="w-full rounded-[14px] md:rounded-[24px] shadow-[0_8px_24px_rgba(0,0,0,0.15)]"
+              />
+            </a>
+          ))}
         </div>
       </section>
 

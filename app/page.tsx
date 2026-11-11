@@ -19,25 +19,32 @@ export default function Home() {
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[#F7F7F2]/80 border-b border-black/5">
         <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
-          <a href="/" className="text-xl font-black tracking-tight">StyleFinder.</a>
+          <a href="/" className="flex items-center gap-2.5 text-xl font-black tracking-tight">
+            <img src="/appstore/icon.png" alt="" className="w-8 h-8 rounded-[22%]" />
+            StyleFinder.
+          </a>
           <a href={APP_STORE_URL} className="inline-flex items-center gap-1.5 bg-[#1C1C1E] text-white text-xs font-semibold px-4 py-2 rounded-[10px] hover:bg-[#1C1C1E]/90 transition">
             <AppleLogo className="w-3 h-3.5" /> Download
           </a>
         </div>
       </nav>
 
-      {/* Hero: the app is out. One big button to the App Store. */}
-      <section className="flex flex-col items-center px-6 pt-32 pb-10">
-        <div className="w-full max-w-lg mx-auto text-center">
-          <p className="inline-block text-xs font-bold uppercase tracking-widest text-[#1C1C1E]/50 bg-[#1C1C1E]/5 rounded-full px-4 py-1.5 mb-6">
-            Out now on iPhone
+      {/* Hero: the app is out. The app as it looks in the App Store (icon,
+          name, first three screenshots) and one big button to it. */}
+      <section className="flex flex-col items-center px-6 pt-28 pb-10">
+        <div className="w-full max-w-xl mx-auto text-center">
+          <p className="text-7xl md:text-9xl font-black tracking-tighter leading-none text-[#1C1C1E] mb-8">
+            Out now.
           </p>
-          <h1 className="text-5xl md:text-6xl font-black tracking-tight text-[#1C1C1E] leading-[1.05] mb-5">
-            Find any outfit<br />from a photo.
-          </h1>
-          <p className="text-base md:text-lg text-[#1C1C1E]/50 mb-10">
-            Scan clothes you see anywhere and find them across shops and resale, at every price.
-          </p>
+
+          <a href={APP_STORE_URL} className="flex items-center gap-4 text-left mx-auto w-fit mb-8">
+            <img src="/appstore/icon.png" alt="StyleFinder app icon" className="w-20 h-20 md:w-24 md:h-24 rounded-[22%] shadow-[0_8px_24px_rgba(0,0,0,0.18)]" />
+            <span>
+              <span className="block text-xl md:text-2xl font-black tracking-tight leading-tight">StyleFinder - Clothing Scanner</span>
+              <span className="block text-sm md:text-base text-[#1C1C1E]/50 mt-1">Find any outfit from a photo</span>
+              <span className="block text-xs font-semibold text-[#1C1C1E]/40 mt-1">Free to try · iPhone</span>
+            </span>
+          </a>
 
           <a
             href={APP_STORE_URL}
@@ -50,7 +57,21 @@ export default function Home() {
               <span className="block text-3xl font-black tracking-tight">App Store</span>
             </span>
           </a>
-          <p className="text-[#1C1C1E]/40 text-sm mt-4">Free to try. For iPhone.</p>
+        </div>
+
+        {/* The first three App Store screenshots: swipe on a phone, side by side on a computer. */}
+        <div className="w-[calc(100%+3rem)] -mx-6 mt-12 md:w-full md:max-w-4xl md:mx-auto">
+          <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory px-6 md:px-0 pb-4 [scrollbar-width:none]">
+            {[1, 2, 3].map((n) => (
+              <a key={n} href={APP_STORE_URL} className="snap-center shrink-0 w-[68%] sm:w-[45%] md:w-auto">
+                <img
+                  src={`/appstore/shot-${n}.jpg`}
+                  alt={`StyleFinder on the App Store, screenshot ${n}`}
+                  className="w-full rounded-[24px] shadow-[0_12px_40px_rgba(0,0,0,0.15)]"
+                />
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 

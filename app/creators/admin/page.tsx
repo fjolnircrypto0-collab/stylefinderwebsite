@@ -41,7 +41,7 @@ export default function CreatorsAdmin() {
   useEffect(() => {
     if (!key) return;
     load(key).then((d) => {
-      if (d && (!d.last_refresh_at || Date.now() - new Date(d.last_refresh_at).getTime() > 12 * 3600e3) && d.creators.some((c) => c.posts.some((p) => p.platform === 'tiktok'))) refresh(key);
+      if (d && (!d.last_refresh_at || Date.now() - new Date(d.last_refresh_at).getTime() > 12 * 3600e3) && d.creators.length > 0) refresh(key);
     });
   }, [key, load, refresh]);
 

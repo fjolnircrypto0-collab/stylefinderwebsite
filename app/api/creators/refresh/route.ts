@@ -3,7 +3,7 @@
 // (with the admin key) and, when CRON_SECRET and CREATOR_REFRESH_KEY are set
 // in Vercel, once a day by Vercel Cron. Each reading also goes to PostHog
 // (`post_stats`), where the StyleFinder dashboard picks it up.
-import { readTikTok, rpc } from '@/lib/creators';
+import { type AdminView, readTikTok, rpc, totals } from '@/lib/creators';
 
 export const maxDuration = 60;
 export const dynamic = 'force-dynamic';
@@ -31,8 +31,29 @@ async function run(key: string) {
     }));
   }
   const saved = rows.length ? (await rpc<{ saved?: number }>('creator_refresh_save', { p_key: key, p_rows: rows })).saved ?? 0 : 0;
+  // With the admin key: one summary per creator (never their private link)
+  // for the StyleFinder dashboard's Creators section.
+  const admin = await rpc<AdminView | null>('creator_admin', { p_key: key }).catch(() => null);
+  if (admin) {
+    const rate = admin.rate == null ? null : Number(admin.rate);
+    for (const c of admin.creators) {
+      const t = totals(c.posts, rate);
+      events.push({ event: 'creator_summary', distinct_id: 'creator-program', timestamp: new Date().toISOString(),
+        properties: {
+          creator_id: c.id, name: c.name, archived: c.archived, joined: c.created_at.slice(0, 10), rate,
+          posts: c.posts.length, tiktok_posts: c.posts.filter((p) => p.platform === 'tiktok').length,
+          instagram_posts: c.posts.filter((p) => p.platform === 'instagram').length,
+          views_all: t.all, views_30d: t.recent, owed_all: t.earnedAll, owed_30d: t.earned30,
+          self_reported_views: c.posts.filter((p) => p.self_reported).reduce((n, p) => n + Number(p.views ?? 0), 0),
+          likes_all: c.posts.reduce((n, p) => n + Number(p.likes ?? 0), 0),
+          last_post: c.posts.map((p) => p.posted ?? p.added_at.slice(0, 10)).sort().pop() ?? null,
+          handles: [...new Set(c.posts.map((p) => p.handle).filter(Boolean))].join(','),
+          environment: 'release', $process_person_profile: false,
+        } });
+    }
+  }
   if (events.length) await fetch(POSTHOG, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ api_key: POSTHOG_KEY, batch: events }) }).catch(() => {});
-  return Response.json({ total: list.length, read: batch.length, saved, failed });
+  return Response.json({ total: list.length, read: batch.length, saved, failed, creators: admin ? admin.creators.length : null });
 }
 
 // From the admin page: the admin key in the body.

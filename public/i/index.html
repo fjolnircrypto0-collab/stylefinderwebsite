@@ -87,6 +87,22 @@ footer a{color:var(--muted);margin:0 10px}
     document.getElementById('androidNote').hidden = false;
   }
 
+  // Email buttons (?from=email, and stylefindr.app/open): if the iPhone showed this page instead of opening the app
+  // (a mail tracking link in between can do that), try the app once; if nothing happens, go on to the App Store.
+  // Anything on screen (iPhone's "Open in StyleFinder?" question, the app opening) stops the App Store step, so nobody
+  // is taken away while they decide; the buttons on the page stay there either way.
+  var from = (q.get('from') || '').replace(/[^A-Za-z0-9_-]/g, '').slice(0, 30);
+  var ios = /iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (from && !code && !share && ios) {
+    var stop = false;
+    var halt = function () { stop = true; };
+    window.addEventListener('blur', halt);
+    window.addEventListener('pagehide', halt);
+    document.addEventListener('visibilitychange', function () { if (document.hidden) halt(); });
+    setTimeout(function () { location.href = deep; }, 60);
+    setTimeout(function () { if (!stop && !document.hidden) location.href = document.getElementById('cta').href; }, 2500);
+  }
+
   function copyText(t) {
     if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(t).catch(function () {});
     return Promise.resolve();

@@ -93,6 +93,15 @@ footer a{color:var(--muted);margin:0 10px}
   // is taken away while they decide; the buttons on the page stay there either way.
   var from = (q.get('from') || '').replace(/[^A-Za-z0-9_-]/g, '').slice(0, 30);
   var ios = /iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  // Count the tap in PostHog (HQ → Numbers → Email buttons): which button, and iPhone or not. Nothing about the person.
+  if (from) {
+    try {
+      fetch('https://eu.i.posthog.com/capture/', { method: 'POST', keepalive: true, body: JSON.stringify({
+        api_key: 'phc_qgibCB4iraQParpBbNDyDJ2Wwi79jj7yiwrsbxsjntQg', event: 'email_link_click', distinct_id: 'email-links',
+        properties: { from: from, device: ios ? 'iphone' : android ? 'android' : 'other', environment: 'release',
+          $process_person_profile: false, $geoip_disable: true } }) }).catch(function () {});
+    } catch (e) {}
+  }
   if (from && !code && !share && ios) {
     var stop = false;
     var halt = function () { stop = true; };
